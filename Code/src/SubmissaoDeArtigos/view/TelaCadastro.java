@@ -31,7 +31,6 @@ public class TelaCadastro extends javax.swing.JFrame implements Observer{
 	this.controller = contr1;
         this.controller.initTelaCadastroController(model, this);	
         model.attachObserver(this);
-        System.out.println(this.model.x);
         tela();
 
     }
@@ -45,11 +44,6 @@ public class TelaCadastro extends javax.swing.JFrame implements Observer{
     });
 }
 
-        
-    private void mandarDados(){
-        System.out.println(this.controller.x);
-        
-    }
 
     
     /**
@@ -214,7 +208,8 @@ public class TelaCadastro extends javax.swing.JFrame implements Observer{
                 .addContainerGap())
         );
 
-        jLabel1.setText("jLabel1");
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 0, 0));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -223,19 +218,19 @@ public class TelaCadastro extends javax.swing.JFrame implements Observer{
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(52, 52, 52)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 631, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(199, 199, 199)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(134, Short.MAX_VALUE))
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(296, 296, 296)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(198, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jLabel1)
-                .addGap(35, 35, 35)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap(151, Short.MAX_VALUE))
         );
@@ -258,8 +253,8 @@ public class TelaCadastro extends javax.swing.JFrame implements Observer{
         Object itemSelecionado = jComboBoxTipo.getSelectedItem();
         String itemSelecionadoString = itemSelecionado.toString();
             
-        controller.login(jTextEmail.getText(),jTextSenha.getText() , itemSelecionadoString);
-        
+        String retorna = controller.login(jTextEmail.getText(),jTextSenha.getText());
+        jLabel1.setText(retorna);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed

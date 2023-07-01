@@ -11,7 +11,11 @@ public class Revisor extends Pessoa {
     // Outros atributos e métodos
     
     // Construtores, getters e setters
-    public Revisor(){}
+
+    public Revisor( String nome, String enderecoEmail, String senha) {
+        super( nome, enderecoEmail, senha,"Revisor");
+    }
+    
     
     
 }

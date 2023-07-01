@@ -7,13 +7,15 @@ public class Pessoa {
     private String nome;
     private String enderecoEmail;
     private String senha;
+    private String vinculacao;
     
 
-    public Pessoa(int id, String nome, String enderecoEmail, String senha) {
-        this.nome = nome;
-        this.enderecoEmail = enderecoEmail;
-        this.senha = senha;
-    }
+    public Pessoa(String nome, String enderecoEmail, String senha, String vinculacao) {
+    this.nome = nome;
+    this.enderecoEmail = enderecoEmail;
+    this.senha = senha;
+    this.vinculacao = vinculacao;
+}
 
     // Getters e Setters
     public String getNome() {
@@ -40,12 +42,25 @@ public class Pessoa {
         this.senha = senha;
     }
 
+    public String getVinculacao() {
+        return vinculacao;
+    }
+
+    public void setVinculacao(String vinculacao) {
+        this.vinculacao = vinculacao;
+    }
+
     public int getId() {
         return id;
     }
 
     public void setId(int id) {
         this.id = id;
+    }
+    
+    @Override
+    public String toString() {
+        return "Pessoa{" + "id=" + id + ", nome=" + nome + ", enderecoEmail=" + enderecoEmail + ", senha=" + senha + ", vinculacao=" + vinculacao + '}';
     }
     
 }

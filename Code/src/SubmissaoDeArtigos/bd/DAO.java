@@ -44,10 +44,41 @@ public class DAO {
     public void DatabaseDelete(String tabela){
         ext.excluirTodosRegistros(tabela);
     }
+    //
+
     
-    
-    
-    
+    //Verificar login
+    public Pessoa verificarLogin(String email, String senha) {
+        Connection conn = null;
+        try {
+            conn = DriverManager.getConnection("jdbc:derby:banco");
+            PreparedStatement statement = conn.prepareStatement("SELECT * FROM Pessoa WHERE enderecoEmail = ? AND senha = ?");
+            statement.setString(1, email);
+            statement.setString(2, senha);
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String nome = resultSet.getString("nome");
+                String enderecoEmail = resultSet.getString("enderecoEmail");
+                String senha1 = resultSet.getString("senha");
+                String vinculacao = resultSet.getString("vinculacao");
+                Pessoa pessoa = new Pessoa( nome, enderecoEmail,senha1, vinculacao);
+                pessoa.setId(id);
+                resultSet.close();
+                statement.close();
+                conn.close();
+                return pessoa;
+            } else {
+                resultSet.close();
+                statement.close();
+                conn.close();
+                return null; // Login inválido, nenhum registro encontrado
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException("Erro ao verificar o login no banco de dados: " + e.getMessage());
+        }
+    }
+
     
     
     
@@ -58,10 +89,11 @@ public class DAO {
         List<Pessoa> pessoas = this.obterTodasAsPessoas(); //passa para uma lista de pessoas
 
         for (Pessoa pessoa : pessoas) { //Printa todas as pessoas
-            System.out.println("ID: " + pessoa.getId());
             System.out.println("Nome: " + pessoa.getNome());
             System.out.println("Senha: " + pessoa.getSenha());
             System.out.println("Endereço de Email: " + pessoa.getEnderecoEmail());
+            System.out.println("Vinculacao: " + pessoa.getEnderecoEmail());
+            
             System.out.println("--------------------");
         }
     }
@@ -83,8 +115,8 @@ public class DAO {
             String nome = rs.getString("nome");
             String senha = rs.getString("senha");
             String enderecoEmail = rs.getString("enderecoEmail");
-
-            Pessoa pessoa = new Pessoa(id,nome, enderecoEmail, senha);
+            String vinculacao = rs.getString("vinculacao");
+            Pessoa pessoa = new Pessoa( nome, senha, enderecoEmail, vinculacao);
             pessoas.add(pessoa);
         }
 
@@ -93,8 +125,9 @@ public class DAO {
     }
 
     return pessoas;
-}
-    
+    }
+ 
+
     
 // Só essa classe vai ser executada,     
 }

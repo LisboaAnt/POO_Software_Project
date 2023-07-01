@@ -4,19 +4,59 @@
  */
 package SubmissaoDeArtigos.view;
 
+import SubmissaoDeArtigos.model.*;
+import SubmissaoDeArtigos.controller.*;
+
 /**
  *
  * @author Windows 10
  */
-public class autorView extends javax.swing.JFrame {
+public class AutorView extends javax.swing.JFrame implements Observer {
 
-    /**
-     * Creates new form autorView
-     */
-    public autorView() {
-        initComponents();
+    private Model model;
+    private AutorViewController controller;
+
+    
+    public AutorView() { //Cria o objeto  TelaCadastro
+        this.addWindowListener(new ProgramaFechador()); //Se fechar fecha certinho
+        initComponents(); //Abre a tela
+
     }
 
+    public void update() {//Implementado do Observer
+    }
+
+    
+    //
+    public void initAutorView(Model model) { // Cria o seu controller passando o Model
+        this.model = model;
+        AutorViewController contr1 = new AutorViewController();	// Cria seu controller
+	this.controller = contr1;
+        this.controller.initAutorViewController(model, this);	
+        model.attachObserver(this);
+        tela();
+
+    }
+        
+     //Mostra a tela   
+    public void tela() {
+    java.awt.EventQueue.invokeLater(new Runnable() {
+        public void run() {
+            setVisible(true);
+        }
+    });
+}
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -141,20 +181,21 @@ public class autorView extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(autorView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AutorView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(autorView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AutorView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(autorView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AutorView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(autorView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AutorView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new autorView().setVisible(true);
+                new AutorView().setVisible(true);
             }
         });
     }

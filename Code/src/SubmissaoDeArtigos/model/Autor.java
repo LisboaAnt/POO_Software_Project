@@ -7,14 +7,12 @@ public class Autor extends Pessoa {
     private String vinculacao;
     private ArrayList<Artigo> historicoDePublicacoes;
 
-    public Autor(String nome,String vinculacao, String email, String senha) {
-        this.setNome(nome);
-        this.setEnderecoEmail(email);
-        this.setSenha(senha);
+    public Autor( String nome, String enderecoEmail, String senha,String vinculacao) {
+        super( nome, enderecoEmail, senha,"Autor");
         this.vinculacao = vinculacao;
-        artigos = new ArrayList<>();
-        historicoDePublicacoes = new ArrayList<>();
     }
+
+    
 
     public void cadastrarAutor(Autor autor){
         

@@ -19,8 +19,9 @@ public class DatabaseInitializer {
             stmt.execute("CREATE TABLE Pessoa (" +
                     "id INT NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1)," +
                     "nome VARCHAR(255) NOT NULL," +
-                    "senha INT," +
+                    "senha VARCHAR(255) NOT NULL," +
                     "enderecoEmail VARCHAR(255)," +
+                    "vinculacao VARCHAR(255)," +
                     "PRIMARY KEY (id))");
 
             stmt.execute("CREATE TABLE Artigo (" +
