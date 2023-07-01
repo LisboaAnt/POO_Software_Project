@@ -247,13 +247,14 @@ public class TelaCadastro extends javax.swing.JFrame implements Observer{
         if(this.login == true && (itemSelecionadoString == "Autor" || itemSelecionadoString == "Revista")){
                 String retorna = controller.login(jTextEmail.getText(),jTextSenha.getText());
         jLabel1.setText(retorna);
-        
         }
         
-        if(this.login == false){//cadastro
+        if(this.login == false && (itemSelecionadoString == "Autor" || itemSelecionadoString == "Revista")){//cadastro
+            
             String retorna = controller.cadastro(jTextNome.getText(),jTextEmail.getText(), jTextSenha.getText(), itemSelecionadoString);
         jLabel1.setText(retorna);
-        }
+        
+        }else{jLabel1.setText("Erro");}
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
