@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class DatabaseGetter {
+    
     public static void getDataFromDatabase() {
         Connection conn = null;
         try {
@@ -22,17 +23,17 @@ public class DatabaseGetter {
             while (rs.next()) {
                 int id = rs.getInt("id");
                 String nome = rs.getString("nome");
-                java.sql.Date dataDeNasc = rs.getDate("dataDeNasc");
+                String senha = rs.getString("senha");
                 String enderecoEmail = rs.getString("enderecoEmail");
+                String vinculacao = rs.getString("vinculacao");
 
                 // Faça algo com os dados recuperados
                 System.out.println("ID: " + id);
                 System.out.println("Nome: " + nome);
-                System.out.println("Data de Nascimento: " + dataDeNasc);
+                System.out.println("Senha: " + senha);
                 System.out.println("Endereço de Email: " + enderecoEmail);
-                System.out.println();
+                System.out.println("Vinculacao: "+ vinculacao);
             }
-
             // Fechar recursos
             rs.close();
             stmt.close();

@@ -29,6 +29,7 @@ public class MainViewController implements Observer{
             view4.initAvaliacaofinalView(model);
             
         }
+        
 
 	public void update() {
 		

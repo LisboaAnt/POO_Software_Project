@@ -1,11 +1,11 @@
 package SubmissaoDeArtigos.controller;
+import SubmissaoDeArtigos.bd.*;
 import SubmissaoDeArtigos.model.*;
 import SubmissaoDeArtigos.view.*;
 
 public class TelaCadastroController implements Observer {
     private Model model; //Guarda o MODEL GERAL!!
     private TelaCadastro view; //Guarda a sua view
-    public int x = 10;
     
 
     public void initTelaCadastroController(Model model, TelaCadastro view) {
@@ -14,7 +14,30 @@ public class TelaCadastroController implements Observer {
                 model.attachObserver(this);
 	}
     
-    public void login(String nome,String Senha,String tipo){}
+    
+    
+    
+    public String login(String email,String senha){
+        DAO dao = DAO.getInstance();
+        
+        Pessoa pessoa = dao.verificarLogin(email, senha);    
+        if(pessoa != null){
+
+            if(pessoa.getVinculacao().equals("Autor")){
+                
+                AutorView view = new AutorView();
+                view.initAutorView(model);
+            
+            
+            }
+        }else{
+            
+            return "Valores invalidos";
+            
+        }
+        
+        return "";
+    }
     
    
   

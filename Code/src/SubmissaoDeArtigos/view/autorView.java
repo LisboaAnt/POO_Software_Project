@@ -4,19 +4,59 @@
  */
 package SubmissaoDeArtigos.view;
 
+import SubmissaoDeArtigos.model.*;
+import SubmissaoDeArtigos.controller.*;
+
 /**
  *
  * @author Windows 10
  */
-public class autorView extends javax.swing.JFrame {
+public class AutorView extends javax.swing.JFrame implements Observer {
 
-    /**
-     * Creates new form autorView
-     */
-    public autorView() {
-        initComponents();
+    private Model model;
+    private AutorViewController controller;
+
+    
+    public AutorView() { //Cria o objeto  TelaCadastro
+        this.addWindowListener(new ProgramaFechador()); //Se fechar fecha certinho
+        initComponents(); //Abre a tela
+
     }
 
+    public void update() {//Implementado do Observer
+    }
+
+    
+    //
+    public void initAutorView(Model model) { // Cria o seu controller passando o Model
+        this.model = model;
+        AutorViewController contr1 = new AutorViewController();	// Cria seu controller
+	this.controller = contr1;
+        this.controller.initAutorViewController(model, this);	
+        model.attachObserver(this);
+        tela();
+
+    }
+        
+     //Mostra a tela   
+    public void tela() {
+    java.awt.EventQueue.invokeLater(new Runnable() {
+        public void run() {
+            setVisible(true);
+        }
+    });
+}
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -26,6 +66,7 @@ public class autorView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jToolBar1 = new javax.swing.JToolBar();
         textSubmissoes = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         listSubmissoes = new javax.swing.JList<>();
@@ -34,11 +75,15 @@ public class autorView extends javax.swing.JFrame {
         listaTodosArtigos = new javax.swing.JList<>();
         buttonNovoArtigo = new javax.swing.JButton();
         buttonSair = new javax.swing.JButton();
+        irSubButton = new javax.swing.JButton();
+        irArtButton = new javax.swing.JButton();
+
+        jToolBar1.setRollover(true);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         textSubmissoes.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        textSubmissoes.setText("Suas Submissões");
+        textSubmissoes.setText("Suas Submissï¿½es");
 
         listSubmissoes.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -71,6 +116,20 @@ public class autorView extends javax.swing.JFrame {
             }
         });
 
+        irSubButton.setText("Ir");
+        irSubButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                irSubButtonActionPerformed(evt);
+            }
+        });
+
+        irArtButton.setText("Ir");
+        irArtButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                irArtButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -82,18 +141,30 @@ public class autorView extends javax.swing.JFrame {
                         .addComponent(buttonNovoArtigo)
                         .addGap(109, 109, 109)
                         .addComponent(buttonSair))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 629, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 629, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(textSubmissoes)
+                                .addGap(473, 473, 473))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(textArtigos)
                             .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(textSubmissoes, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(textArtigos, javax.swing.GroupLayout.Alignment.LEADING)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(31, 31, 31)
+                                .addGap(25, 25, 25)
                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 629, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(334, Short.MAX_VALUE))
+                .addContainerGap(140, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(irSubButton)
+                        .addGap(158, 158, 158))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(irArtButton)
+                        .addGap(164, 164, 164))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -103,10 +174,14 @@ public class autorView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(irSubButton)
+                .addGap(12, 12, 12)
                 .addComponent(textArtigos)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 131, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(irArtButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buttonNovoArtigo)
                     .addComponent(buttonSair))
@@ -117,12 +192,22 @@ public class autorView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonNovoArtigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonNovoArtigoActionPerformed
-        // TODO add your handling code here:
+        cadArtigoView telaAddArt = new cadArtigoView(this);
+        telaAddArt.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_buttonNovoArtigoActionPerformed
 
     private void buttonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSairActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_buttonSairActionPerformed
+
+    private void irSubButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_irSubButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_irSubButtonActionPerformed
+
+    private void irArtButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_irArtButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_irArtButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -141,20 +226,21 @@ public class autorView extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(autorView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AutorView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(autorView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AutorView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(autorView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AutorView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(autorView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AutorView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new autorView().setVisible(true);
+                new AutorView().setVisible(true);
             }
         });
     }
@@ -162,8 +248,11 @@ public class autorView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonNovoArtigo;
     private javax.swing.JButton buttonSair;
+    private javax.swing.JButton irArtButton;
+    private javax.swing.JButton irSubButton;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JToolBar jToolBar1;
     private javax.swing.JList<String> listSubmissoes;
     private javax.swing.JList<String> listaTodosArtigos;
     private javax.swing.JLabel textArtigos;
