@@ -39,9 +39,15 @@ public class TelaCadastroController implements Observer {
         return "";
     }
     
-   
-  
+   public String cadastro(String nome, String email, String senha,String tipo){
     
+    Pessoa pessoa = new Pessoa(nome,email,senha,tipo);
+    
+    DAO dao = DAO.getInstance();
+    dao.databaseInsert(pessoa);
+       
+    return "ADICIONADO COM SUSESSO";
+   }
     
     
     
