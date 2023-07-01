@@ -7,7 +7,8 @@ import SubmissaoDeArtigos.view.Observer;
 
 
 public class Model {
-
+    public int x = 10;
+        
     private ArrayList<Observer> observers = new ArrayList<Observer>(); // Lista de observadores interessados no modelo
 
         /*

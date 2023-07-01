@@ -11,6 +11,7 @@ public class MainViewController implements Observer{
 	public void initMainViewController(Model model, MainView view) {
 		this.model = model;  // Guarda o modelo
 		this.view = view;	 // Guarda a view
+                model.attachObserver(this);
 	}
 	
         public void initTelaCadastro(){
@@ -19,13 +20,13 @@ public class MainViewController implements Observer{
         }
         
         public void initRevisor(){
-            RevisorView view3 = new RevisorView();// ir para a tela revisor
+            RevisorView view3 = new RevisorView(); // ir para a tela revisor
             view3.initRevisorView(model);
         }
         
         public void initAvaliacao(){
-            AvaliacaoView view4 = new AvaliacaoView();
-            view4.initAvaliacaoView(model);
+            AvaliacaofinalView view4 = new AvaliacaofinalView();
+            view4.initAvaliacaofinalView(model);
             
         }
         
@@ -33,6 +34,14 @@ public class MainViewController implements Observer{
 	public void update() {
 		
 	}
+
+    public Model getModel() {
+        return model;
+    }
+
+    public void setModel(Model model) {
+        this.model = model;
+    }
 
 
 	

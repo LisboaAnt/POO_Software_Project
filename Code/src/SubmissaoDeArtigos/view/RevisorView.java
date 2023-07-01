@@ -43,7 +43,7 @@ public class RevisorView extends javax.swing.JFrame implements Observer {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton2 = new javax.swing.JButton();
+        Avaliar = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -57,12 +57,11 @@ public class RevisorView extends javax.swing.JFrame implements Observer {
         jMenu3 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(800, 600));
 
-        jButton2.setText("Avaliar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        Avaliar.setText("Avaliar");
+        Avaliar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                AvaliarActionPerformed(evt);
             }
         });
 
@@ -102,7 +101,7 @@ public class RevisorView extends javax.swing.JFrame implements Observer {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jButton3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 585, Short.MAX_VALUE)
-                        .addComponent(jButton2)
+                        .addComponent(Avaliar)
                         .addGap(44, 44, 44))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -142,16 +141,19 @@ public class RevisorView extends javax.swing.JFrame implements Observer {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 280, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3)
-                    .addComponent(jButton2))
+                    .addComponent(Avaliar))
                 .addGap(25, 25, 25))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void AvaliarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AvaliarActionPerformed
         //implemetar ação no botão
-    }//GEN-LAST:event_jButton2ActionPerformed
+        AvaliacaofinalView viewAvaliar = new AvaliacaofinalView();//Criada instância da view de avaliação
+        viewAvaliar.setVisible(true);//Torna a view de avaliação visível
+        dispose(); //Fecha a view de revisor ao abrir a view de avaliação
+    }//GEN-LAST:event_AvaliarActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         //implementar ação no botão
@@ -193,7 +195,7 @@ public class RevisorView extends javax.swing.JFrame implements Observer {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton Avaliar;
     private javax.swing.JButton jButton3;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;

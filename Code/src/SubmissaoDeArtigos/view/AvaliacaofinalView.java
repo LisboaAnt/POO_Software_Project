@@ -4,28 +4,28 @@ import SubmissaoDeArtigos.model.*;
 import SubmissaoDeArtigos.controller.*;
 import javax.swing.JFrame;
 
-public class AvaliacaoView extends javax.swing.JFrame implements Observer {
+public class AvaliacaofinalView extends javax.swing.JFrame implements Observer {
     private Model model;
-    private AvaliacaoController controller;
+    private AvaliacaofinalController controller;
    //Outros atributos...
     
-    public AvaliacaoView() {
+    public AvaliacaofinalView() {
         initComponents();
         this.addWindowListener(new ProgramaFechador());
     }
     public void update(){
     }
-    public void initAvaliacaoView(Model model){
+    public void initAvaliacaofinalView(Model model){
         this.model = model;
-        controller = new AvaliacaoController();
-        controller.initUserViewAvaliacaoController(model, this);
+        controller = new AvaliacaofinalController();
+        controller.initUserViewAvaliacaofinalController(model, this);
         model.attachObserver(this);
         telaAvaliacao();
     }
     public void telaAvaliacao(){
         java.awt.EventQueue.invokeLater(new Runnable() {
                  public void run() {
-                     new AvaliacaoView().setVisible(true);
+                     new AvaliacaofinalView().setVisible(true);
                  }
              });
     }
@@ -41,7 +41,7 @@ public class AvaliacaoView extends javax.swing.JFrame implements Observer {
         nota2 = new javax.swing.JRadioButton();
         nota3 = new javax.swing.JRadioButton();
         nota4 = new javax.swing.JRadioButton();
-        proximo = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         nota5 = new javax.swing.JRadioButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -51,7 +51,6 @@ public class AvaliacaoView extends javax.swing.JFrame implements Observer {
         nomeAutor = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         criterioDeAvaliacao = new javax.swing.JLabel();
-        anterior = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
 
@@ -79,12 +78,7 @@ public class AvaliacaoView extends javax.swing.JFrame implements Observer {
             }
         });
 
-        proximo.setText("Próximo");
-        proximo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                proximoActionPerformed(evt);
-            }
-        });
+        jButton1.setText("Enviar avaliação");
 
         jLabel4.setText(" Nota de avaliação de determinado critério:");
 
@@ -95,8 +89,6 @@ public class AvaliacaoView extends javax.swing.JFrame implements Observer {
         jScrollPane1.setViewportView(AreaTextoFeedback);
 
         jLabel5.setText("Feedback do avaliador:");
-
-        anterior.setText("Anterior");
 
         jMenu1.setText("Avaliação de artigo");
         jMenuBar1.add(jMenu1);
@@ -148,14 +140,11 @@ public class AvaliacaoView extends javax.swing.JFrame implements Observer {
                                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(61, 61, 61)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 662, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 662, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(343, 343, 343)
+                        .addComponent(jButton1)))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(94, 94, 94)
-                .addComponent(anterior)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(proximo)
-                .addGap(280, 280, 280))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -194,11 +183,9 @@ public class AvaliacaoView extends javax.swing.JFrame implements Observer {
                                 .addComponent(nota5)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(proximo)
-                    .addComponent(anterior))
-                .addGap(39, 39, 39))
+                .addGap(31, 31, 31)
+                .addComponent(jButton1)
+                .addGap(36, 36, 36))
         );
 
         getAccessibleContext().setAccessibleName("5");
@@ -209,10 +196,6 @@ public class AvaliacaoView extends javax.swing.JFrame implements Observer {
     private void nota4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nota4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nota4ActionPerformed
-
-    private void proximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_proximoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_proximoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -231,20 +214,14 @@ public class AvaliacaoView extends javax.swing.JFrame implements Observer {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AvaliacaoView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AvaliacaofinalView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AvaliacaoView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AvaliacaofinalView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AvaliacaoView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AvaliacaofinalView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AvaliacaoView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AvaliacaofinalView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-
-        //</editor-fold>
-        //</editor-fold>
-
         //</editor-fold>
         //</editor-fold>
 
@@ -257,8 +234,8 @@ public class AvaliacaoView extends javax.swing.JFrame implements Observer {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea AreaTextoFeedback;
-    private javax.swing.JButton anterior;
     private javax.swing.JLabel criterioDeAvaliacao;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -276,6 +253,5 @@ public class AvaliacaoView extends javax.swing.JFrame implements Observer {
     private javax.swing.JRadioButton nota3;
     private javax.swing.JRadioButton nota4;
     private javax.swing.JRadioButton nota5;
-    private javax.swing.JButton proximo;
     // End of variables declaration//GEN-END:variables
 }

@@ -2,18 +2,18 @@ package SubmissaoDeArtigos.controller;
 import SubmissaoDeArtigos.model.*;
 import SubmissaoDeArtigos.view.*;
 
-public class AvaliacaoController implements Observer{
+public class AvaliacaofinalController implements Observer {
     private Model model;
-    private AvaliacaoView view;
+    private AvaliacaofinalView view;
     
-    public void initUserViewAvaliacaoController(Model model, AvaliacaoView view){
+    public void initUserViewAvaliacaofinalController(Model model, AvaliacaofinalView view){
         this.model = model;
         this.view = view;
         model.attachObserver(this);
     }
     
-    
+    @Override
     public void update(){
     }
-    
 }
+
