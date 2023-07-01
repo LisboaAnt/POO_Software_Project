@@ -12,5 +12,12 @@ import SubmissaoDeArtigos.model.Autor;
  * @author Windows 10
  */
 public class autorController {
+        private Autor model;
+        private autorView tela;
     
+    
+     public void initautorController(Autor model, autorView tela){
+          this.model = model;
+          this.tela = tela;
+     }
 }
