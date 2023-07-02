@@ -3,7 +3,10 @@ package SubmissaoDeArtigos.controller.Revista;
 import SubmissaoDeArtigos.bd.*;
 import SubmissaoDeArtigos.model.*;
 import SubmissaoDeArtigos.view.*;
-import SubmissaoDeArtigos.view.TelaRevista;
+import java.util.List;
+
+
+
 
 /**
  *
@@ -24,7 +27,19 @@ public class TelaRevistaController implements Observer {
         
         DAO dao = DAO.getInstance();
         dao.databaseInsert(revisor);
-        return "Deu certo";
+        return "Revisor Cadastrado";
+        }else{return "DADOS INVALIDOS";}
+    }
+    
+    public String cadastrarEdicao(String titulo,String numero,String trilha){
+    
+   
+        if(titulo.length() !=0 && numero.length() != 0 && trilha.length()!= 0){
+        Edicao edicao = new Edicao(titulo, numero,trilha);
+        
+        DAO dao = DAO.getInstance();
+        dao.databaseInsert(edicao);
+        return "Edicao Cadastrada";
         }else{return "DADOS INVALIDOS";}
     }
     

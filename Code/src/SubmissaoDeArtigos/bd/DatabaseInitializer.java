@@ -52,6 +52,12 @@ public class DatabaseInitializer {
                     "enderecoEmail VARCHAR(255)," +
                     "especialidade VARCHAR(255)," +
                     "PRIMARY KEY (id))");
+            
+            stmt.execute("CREATE TABLE Edicao (" +
+                    "id INT NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1)," +
+                    "titulo VARCHAR(255) NOT NULL," +
+                    "numero VARCHAR(255) NOT NULL," +
+                    "trilha VARCHAR(255),");
 
             stmt.execute("CREATE TABLE Artigo_Autor (" +
                     "artigo_id INT," +

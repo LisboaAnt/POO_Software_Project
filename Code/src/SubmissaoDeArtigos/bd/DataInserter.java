@@ -46,6 +46,20 @@ public class DataInserter {
             e.printStackTrace();
         }
     }
+        public static void insertEdicao(Edicao edicao){
+        String sql = "INSERT INTO Edicao (Titulo, Numero,Trilha) VALUES (?, ?, ?)";
+        try (Connection conn = DriverManager.getConnection("jdbc:derby:banco");
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, edicao.getTitulo());
+            stmt.setString(2, edicao.getNumero());
+            stmt.setString(3, edicao.getTrilha());
+            stmt.executeUpdate();
+            stmt.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    
     
     
     
