@@ -14,24 +14,26 @@ public class Artigo {
     private String titulo;
     private Revisor[] revisores;
     private String resumo;
-    private File conteudo;
-    private Revisor statusDeRevisao;
-    private Date dataDeSubmissao;
-    private Date dataDePublicacao;
+    private String conteudo;
+    private Boolean statusDeRevisao;
 
 
     public Artigo(){
 
     }
-    public Artigo(String titulo, Revisor[] revisores, String resumo, File conteudo, Revisor statusDeRevisao, Date dataDeSubmissao, Date dataDePublicacao){
+    public Artigo(String titulo, Revisor[] revisores, String resumo, String conteudo, Boolean statusDeRevisao){
         this.titulo = titulo;
         this.revisores = revisores;
         this.resumo = resumo;
         this.conteudo = conteudo;
         this.statusDeRevisao = statusDeRevisao;
-        this.dataDeSubmissao = dataDeSubmissao;
-        this.dataDePublicacao = dataDePublicacao;
     }
+    
+    public Artigo(String titulo, String conteudo){
+        this.titulo = titulo;
+        this.conteudo = conteudo;
+    }
+    
     public String getTitulo(){
         return titulo;
     }
@@ -50,28 +52,16 @@ public class Artigo {
     public void setResumo(String resumo){
         this.resumo = resumo;
     }
-    public File getConteudo(){
+    public String getConteudo(){
         return conteudo;
     }
-    public void setConteudo(File conteudo){
+    public void setConteudo(String conteudo){
         this.conteudo = conteudo;
     }
-    public Revisor getStatusDeRevisao(){
+    public Boolean getStatusDeRevisao(){
         return statusDeRevisao;
     }
-    public void setStatusDeRevisao(Revisor statusDeRevisao){
+    public void setStatusDeRevisao(Boolean statusDeRevisao){
         this.statusDeRevisao = statusDeRevisao;
-    }
-    public Date getDataDeSubmissao(){
-        return dataDeSubmissao;
-    }
-    public void setDataDeSubmissao(Date dataDeSubmissao){
-        this.dataDeSubmissao = dataDeSubmissao;
-    }
-    public Date getDataDePublicacao(){
-        return dataDePublicacao;
-    }
-    public void setDataDePublicacao(Date dataDePublicacao){
-        this.dataDePublicacao = dataDePublicacao;
     }
 }

@@ -14,9 +14,9 @@ public class AutorViewController implements Observer {
                 model.attachObserver(this);
     }
     
-    public void NovoArtigo(){
+    public void NovoArtigo(Autor autor){
         CadArtigoView view = new CadArtigoView();
-        view.initCadArtigoView(model);
+        view.initCadArtigoView(model, this.view, autor);
         view.setVisible(true);
         this.view.setVisible(false);
     }
