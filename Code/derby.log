@@ -1,5 +1,5 @@
 ----------------------------------------------------------------
-Sun Jul 02 12:33:40 BRT 2023D001 : [0] The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585), [1] a816c00e-0189-173c-fd22-000005011d18, [2] C:\Users\anton\햞ea de Trabalho\POO FINAL\POO_Software_Project\Code\banco, [3] jdk.internal.loader.ClassLoaders$AppClassLoader@5caf905d, [4] file:/C:/Users/anton/Documentos/db-derby-10.15.2.0-bin/db-derby-10.15.2.0-bin/lib/derby.jar
+Sun Jul 02 12:54:56 BRT 2023D001 : [0] The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585), [1] a816c00e-0189-1750-7781-000005100000, [2] C:\Users\anton\햞ea de Trabalho\POO FINAL\POO_Software_Project\Code\banco, [3] jdk.internal.loader.ClassLoaders$AppClassLoader@5caf905d, [4] file:/C:/Users/anton/Documentos/db-derby-10.15.2.0-bin/db-derby-10.15.2.0-bin/lib/derby.jar
 java.vendor=Oracle Corporation
 java.runtime.version=19.0.2+7-44
 user.dir=C:\Users\anton\햞ea de Trabalho\POO FINAL\POO_Software_Project\Code
@@ -7,7 +7,4 @@ os.name=Windows 11
 os.arch=amd64
 os.version=10.0
 derby.system.home=null
-L001
-L018 : [0] C:\Users\anton\햞ea de Trabalho\POO FINAL\POO_Software_Project\Code\banco\log\log1.dat
-L002
 C005 : [0] 

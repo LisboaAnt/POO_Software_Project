@@ -1,7 +1,7 @@
 
 package SubmissaoDeArtigos.model;
 
-public class EdicaoModel {
+public class Edicao {
     private int id;
     private Revista local;
     private String numEdicao;
