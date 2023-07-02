@@ -3,7 +3,7 @@ package SubmissaoDeArtigos.controller.Revista;
 import SubmissaoDeArtigos.bd.*;
 import SubmissaoDeArtigos.model.*;
 import SubmissaoDeArtigos.view.*;
-import SubmissaoDeArtigos.view.Revista.TelaRevista;
+import SubmissaoDeArtigos.view.TelaRevista;
 
 /**
  *
@@ -16,11 +16,16 @@ public class TelaRevistaController implements Observer {
     
 
     
-    public void cadastrarRevisor(Revisor revisor){
+    public String cadastrarRevisor(String nome,String senha,String email,String especialidade){
     
+        
+        if(nome.length() !=0 && senha.length() != 0 && email.length() !=0 && especialidade.length() != 0){
+        Revisor revisor = new Revisor(nome,senha,email,especialidade);
+        
         DAO dao = DAO.getInstance();
         dao.databaseInsert(revisor);
-    
+        return "Deu certo";
+        }else{return "DADOS INVALIDOS";}
     }
     
     

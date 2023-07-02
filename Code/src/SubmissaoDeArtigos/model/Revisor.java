@@ -12,7 +12,7 @@ public class Revisor extends Pessoa {
     
     // Construtores, getters e setters
 
-    public Revisor( String nome, String enderecoEmail, String senha) {
+    public Revisor( String nome, String enderecoEmail, String senha, String especialidade) {
         super( nome, enderecoEmail, senha,"Revisor");
     }
 
