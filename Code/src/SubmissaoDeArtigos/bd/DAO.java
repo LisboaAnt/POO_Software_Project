@@ -26,6 +26,14 @@ public class DAO {
     public void DatabaseInitializer(){
     DatabaseInitializer.initializeDatabase(); }
     
+    
+    public void databaseInset(Revisor revisor){
+        DataInserter add = new DataInserter(); 
+        add.insertRevisor(revisor);
+    }
+    
+    
+    
     public void databaseInsert(Pessoa pessoa){
         DataInserter add = new DataInserter(); // cria o objeto insert
         
