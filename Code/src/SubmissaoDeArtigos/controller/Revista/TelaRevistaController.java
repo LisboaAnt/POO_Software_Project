@@ -31,9 +31,9 @@ public class TelaRevistaController implements Observer {
         }else{return "DADOS INVALIDOS";}
     }
     
-    public String cadastrarEdicao(String titulo,String numero,String trilha){
+    public String cadastrarEdicao(String titulo,int numero,String trilha){
     
-        if(titulo.length() !=0 && numero.length() != 0 && trilha.length()!= 0){
+        if(titulo.length() !=0 && numero != 0 && trilha.length()!= 0){
         Edicao edicao = new Edicao(titulo, numero,trilha);
         DAO dao = DAO.getInstance();
         dao.databaseInset(edicao);

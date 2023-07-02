@@ -51,7 +51,7 @@ public class DataInserter {
         try (Connection conn = DriverManager.getConnection("jdbc:derby:banco");
              PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setString(1, edicao.getTitulo());
-            stmt.setString(2, edicao.getNumero());
+            stmt.setInt(2, edicao.getNumero());
             stmt.setString(3, edicao.getTrilha());
             stmt.executeUpdate();
             stmt.close();

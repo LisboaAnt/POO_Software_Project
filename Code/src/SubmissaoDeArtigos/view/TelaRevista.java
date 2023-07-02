@@ -518,9 +518,8 @@ public class TelaRevista extends javax.swing.JFrame implements Observer{
         
         Object itemSelecionado = jComboBoxTrilha.getSelectedItem();
         String itemSelecionadoString = itemSelecionado.toString();
-        
-        
-        String x = controller.cadastrarEdicao(jTextFieldTitulo.getText(),jTextFieldNumero.getText(),itemSelecionadoString);
+        String x;
+        x = controller.cadastrarEdicao(jTextFieldTitulo.getText(),jTextFieldNumero.getText(),itemSelecionadoString);
         jLabelError.setText(x);
                 // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed

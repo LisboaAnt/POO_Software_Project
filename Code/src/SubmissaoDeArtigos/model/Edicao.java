@@ -4,12 +4,12 @@ import java.util.*;
 
 public class Edicao {
     private String titulo;
-    private String numero;
+    private int numero;
     private String trilha;
     // Outros atributos e métodos
     
     // Construtores
-    public Edicao(String titulo, String numero,String trilha) {
+    public Edicao(String titulo, int numero,String trilha) {
         this.titulo = titulo;
         this.numero = numero;
         this.trilha = trilha;
@@ -24,11 +24,11 @@ public class Edicao {
         this.titulo = titulo;
     }
 
-    public String getNumero() {
+    public int getNumero() {
         return numero;
     }
 
-    public void setNumero(String numero) {
+    public void setNumero(int numero) {
         this.numero = numero;
     }
 
