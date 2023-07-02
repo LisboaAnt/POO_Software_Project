@@ -53,7 +53,39 @@ public class DAO {
         ext.excluirTodosRegistros(tabela);
     }
     //
-
+    
+    public Autor verificarLoginAutor(String email, String senha){
+        Connection conn = null;
+        try {
+            conn = DriverManager.getConnection("jdbc:derby:banco");
+            PreparedStatement statement = conn.prepareStatement("SELECT * FROM Autor WHERE enderecoEmail = ? AND senha = ?");
+            statement.setString(1, email);
+            statement.setString(2, senha);
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String nome = resultSet.getString("nome");
+                String enderecoEmail = resultSet.getString("enderecoEmail");
+                String senha1 = resultSet.getString("senha");
+                String vinculacao = resultSet.getString("vinculacao");
+                Autor autor = new Autor( nome, enderecoEmail,senha1, vinculacao);
+                autor.setId(id);
+                resultSet.close();
+                statement.close();
+                conn.close();
+                return autor;
+            } else {
+                resultSet.close();
+                statement.close();
+                conn.close();
+                return null; // Login inválido, nenhum registro encontrado
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException("Erro ao verificar o login no banco de dados: " + e.getMessage());
+        }
+    }
+    
+    
     
     //Verificar login
     public Pessoa verificarLogin(String email, String senha) {

@@ -105,7 +105,7 @@ public class TelaCadastro extends javax.swing.JFrame implements Observer{
 
         jComboBoxTipo.setBackground(new java.awt.Color(252, 252, 252));
         jComboBoxTipo.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jComboBoxTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "...", "Autor", "Revista", " " }));
+        jComboBoxTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "...", "Autor", "Revista", "Revisor", " " }));
         jComboBoxTipo.setToolTipText("");
         jComboBoxTipo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -244,17 +244,16 @@ public class TelaCadastro extends javax.swing.JFrame implements Observer{
         String itemSelecionadoString = itemSelecionado.toString();
             
         
-        if(this.login == true && (itemSelecionadoString == "Autor" || itemSelecionadoString == "Revista")){
-                String retorna = controller.login(jTextEmail.getText(),jTextSenha.getText());
+        if(this.login == true){
+            String retorna = controller.login(jTextEmail.getText(),jTextSenha.getText(),itemSelecionadoString);
         jLabel1.setText(retorna);
         }
         
-        if(this.login == false && (itemSelecionadoString == "Autor" || itemSelecionadoString == "Revista")){//cadastro
-            
+
+        if(this.login == false){
             String retorna = controller.cadastro(jTextNome.getText(),jTextEmail.getText(), jTextSenha.getText(), itemSelecionadoString);
         jLabel1.setText(retorna);
-        
-        }else{jLabel1.setText("Erro");}
+        }
         
     }//GEN-LAST:event_jButton2ActionPerformed
 

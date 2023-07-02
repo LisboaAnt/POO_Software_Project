@@ -16,9 +16,10 @@ public class main { //poe o derby na libraries na classpath
         
         Model model = new Model(); // Primeiro instancia-se o modelo
         
-        TelaRevista view = new TelaRevista();
-        //MainView view = new MainView(); // Depois cria-se a primeira view
-        view.initTelaRevista(model); // Por fim, inicializa a view passando o modelo
+        //TelaRevista view = new TelaRevista();
+         MainView view = new MainView(); // Depois cria-se a primeira view
+         view.initMainView(model);
+        //view.initTelaRevista(model); // Por fim, inicializa a view passando o modelo
         //RevisorView view2 = new RevisorView();
         //view2.initRevisorView(model);
             

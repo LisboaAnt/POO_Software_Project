@@ -187,11 +187,12 @@
               <Font name="Arial" size="14" style="0"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
+              <StringArray count="5">
                 <StringItem index="0" value="..."/>
                 <StringItem index="1" value="Autor"/>
                 <StringItem index="2" value="Revista"/>
-                <StringItem index="3" value=" "/>
+                <StringItem index="3" value="Revisor"/>
+                <StringItem index="4" value=" "/>
               </StringArray>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value=""/>
