@@ -33,10 +33,8 @@ public class TelaRevistaController implements Observer {
     
     public String cadastrarEdicao(String titulo,String numero,String trilha){
     
-   
         if(titulo.length() !=0 && numero.length() != 0 && trilha.length()!= 0){
         Edicao edicao = new Edicao(titulo, numero,trilha);
-        
         DAO dao = DAO.getInstance();
         dao.databaseInsert(edicao);
         return "Edicao Cadastrada";
