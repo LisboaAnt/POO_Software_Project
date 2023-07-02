@@ -7,7 +7,8 @@ import javax.swing.JFrame;
 public class AvaliacaoView extends javax.swing.JFrame implements Observer {
     private Model model;
     private AvaliacaoController controller = new AvaliacaoController();
-   //Outros atributos...
+   private AvaliacaoView viewAnt;
+    private AvaliacaoView viewProx;
     
     public AvaliacaoView() {
         initComponents();
@@ -15,8 +16,10 @@ public class AvaliacaoView extends javax.swing.JFrame implements Observer {
     }
     public void update(){
     }
-    public void initAvaliacaoView(Model model){
+    public void initAvaliacaoView(Model model, AvaliacaoView viewAnt, AvaliacaoView viewProx){
         this.model = model;
+        this.viewAnt = viewAnt;
+        this.viewProx = viewProx;
         AvaliacaoController controll = new AvaliacaoController();
         this.controller = controll;
         this.controller.initUserViewAvaliacaoController(model, this);
@@ -98,6 +101,11 @@ public class AvaliacaoView extends javax.swing.JFrame implements Observer {
         jLabel5.setText("Feedback do avaliador:");
 
         anterior.setText("Anterior");
+        anterior.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                anteriorActionPerformed(evt);
+            }
+        });
 
         jMenu1.setText("Avaliação de artigo");
         jMenuBar1.add(jMenu1);
@@ -213,8 +221,12 @@ public class AvaliacaoView extends javax.swing.JFrame implements Observer {
 
     private void proximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_proximoActionPerformed
         controller.prox();
-        dispose();
+    
     }//GEN-LAST:event_proximoActionPerformed
+
+    private void anteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_anteriorActionPerformed
+        controller.ant();
+    }//GEN-LAST:event_anteriorActionPerformed
 
     /**
      * @param args the command line arguments

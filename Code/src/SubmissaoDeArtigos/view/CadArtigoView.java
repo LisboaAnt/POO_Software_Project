@@ -24,7 +24,7 @@ public class CadArtigoView extends javax.swing.JFrame implements Observer {
 
     public void initCadArtigoView(Model model, AutorView viewAnt, Autor autor){
         this.model = model;
-        this.viewAnt =viewAnt;
+        this.viewAnt = viewAnt;
         this.autor = autor;
         CadArtigoController contr1 = new CadArtigoController();	// Cria seu controller
 	this.controller = contr1;

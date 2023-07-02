@@ -12,6 +12,14 @@ import java.sql.Date;
  */
 public class Artigo {
     private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
     private String titulo;
     private Revisor[] revisores;
     private String resumo;

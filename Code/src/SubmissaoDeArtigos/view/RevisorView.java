@@ -8,7 +8,9 @@ public class RevisorView extends javax.swing.JFrame implements Observer {
     
     private Model model;
     private RevisorController controller ;
-    //Outros atributos..
+    
+    
+    
     
     public RevisorView() {
         initComponents();

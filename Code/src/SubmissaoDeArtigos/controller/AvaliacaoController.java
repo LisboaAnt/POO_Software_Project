@@ -17,10 +17,15 @@ public class AvaliacaoController implements Observer{
     }
     public void prox(){
         AvaliacaoView view = new AvaliacaoView();
-        view.initAvaliacaoView(model);
+        view.initAvaliacaoView(model,this.view, this.view);
         view.setVisible(true);
-        view.setVisible(false);
-    
+        this.view.setVisible(false);
     }
-    
+    public void ant(){
+         AvaliacaoView view = new AvaliacaoView();
+         view.initAvaliacaoView(model,this.view, this.view);
+         view.setVisible(true);
+         this.view.setVisible(false);
+        
+    }
 }
