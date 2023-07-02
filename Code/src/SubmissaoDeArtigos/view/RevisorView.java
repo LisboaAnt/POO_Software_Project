@@ -21,8 +21,9 @@ public class RevisorView extends javax.swing.JFrame implements Observer {
     
     public void initRevisorView(Model model){//Inicializa a view Revisor
         this.model = model;
-        controller = new RevisorController();
-        controller.InitUserViewRevisorController(model, this);
+        RevisorController controll = new RevisorController();
+        this.controller = controll;
+        this.controller.InitUserViewRevisorController(model, this);
         model.attachObserver(this);
         telaRevisor();
     }
@@ -43,6 +44,7 @@ public class RevisorView extends javax.swing.JFrame implements Observer {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         Avaliar = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -150,9 +152,7 @@ public class RevisorView extends javax.swing.JFrame implements Observer {
 
     private void AvaliarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AvaliarActionPerformed
         //implemetar ação no botão
-        AvaliacaofinalView viewAvaliar = new AvaliacaofinalView();//Criada instância da view de avaliação
-        viewAvaliar.setVisible(true);//Torna a view de avaliação visível
-        dispose(); //Fecha a view de revisor ao abrir a view de avaliação
+    controller.alternarTelaAva();
     }//GEN-LAST:event_AvaliarActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -196,6 +196,7 @@ public class RevisorView extends javax.swing.JFrame implements Observer {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Avaliar;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton3;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;

@@ -11,6 +11,7 @@ import java.sql.Date;
  * @author Francisco Levi Souza Anastácio
  */
 public class Artigo {
+    private int id;
     private String titulo;
     private Revisor[] revisores;
     private String resumo;

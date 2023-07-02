@@ -31,6 +31,48 @@ public class DataInserter {
             e.printStackTrace();
         }
     }
+
+        public static void insertRevisor(Revisor revisor){
+        String sql = "INSERT INTO Revirsor (nome, senha, enderecoEmail,especialidade) VALUES (?, ?, ?, ?)";
+        try (Connection conn = DriverManager.getConnection("jdbc:derby:banco");
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, revisor.getNome());
+            stmt.setString(2, revisor.getSenha());
+            stmt.setString(3, revisor.getEnderecoEmail());
+            stmt.setString(4, revisor.getEspecialidade());
+            stmt.executeUpdate();
+            stmt.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    
+    
+    
+    
+        public static void insertAutor(Autor autor) {
+            String sql = "INSERT INTO Autor (nome, senha, enderecoEmail,artigos, vinculacao,historicoDePublicacoes ) VALUES (?, ?, ?, ?,?,?)";
+        try (Connection conn = DriverManager.getConnection("jdbc:derby:banco");
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, autor.getNome());
+            stmt.setString(2, autor.getSenha());
+            stmt.setString(3, autor.getEnderecoEmail());
+            stmt.setString(4, autor.getArtigosIds());
+            stmt.setString(5, autor.getVinculacao());
+            stmt.setString(6, autor.getHistoricoDePublicacoesIds());
+
+            int rowsAffected = stmt.executeUpdate();
+            if (rowsAffected > 0) {
+                System.out.println("Autor inserted successfully!");
+            } else {
+                System.out.println("Failed to insert autor.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    
         
     
     //
