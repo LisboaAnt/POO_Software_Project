@@ -28,7 +28,7 @@ public class TelaCadastroController implements Observer {
                 AutorView view = new AutorView();
                 view.initAutorView(model);
                 view.setVisible(true);
-                this.view.setVisible(false);
+                view.setVisible(false);
             
             
             }

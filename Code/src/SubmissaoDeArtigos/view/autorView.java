@@ -15,6 +15,7 @@ public class AutorView extends javax.swing.JFrame implements Observer {
 
     private Model model;
     private AutorViewController controller;
+    private Autor autor;
 
     
     public AutorView() { //Cria o objeto  TelaCadastro
@@ -27,9 +28,10 @@ public class AutorView extends javax.swing.JFrame implements Observer {
     }
 
     
-    //
-    public void initAutorView(Model model) { // Cria o seu controller passando o Model
+    // iniciador da tela do autor
+    public void initAutorView(Model model, Autor autor) { // Cria o seu controller passando o Model
         this.model = model;
+        this.autor = autor;
         AutorViewController contr1 = new AutorViewController();	// Cria seu controller
 	this.controller = contr1;
         this.controller.initAutorViewController(model, this);	
@@ -116,6 +118,11 @@ public class AutorView extends javax.swing.JFrame implements Observer {
         });
 
         IrSubButton.setText("Ir");
+        IrSubButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IrSubButtonActionPerformed(evt);
+            }
+        });
 
         irArtButton.setText("Ir");
 
@@ -187,6 +194,10 @@ public class AutorView extends javax.swing.JFrame implements Observer {
     private void buttonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSairActionPerformed
          System.exit(0);
     }//GEN-LAST:event_buttonSairActionPerformed
+
+    private void IrSubButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IrSubButtonActionPerformed
+        
+    }//GEN-LAST:event_IrSubButtonActionPerformed
 
     /**
      * @param args the command line arguments

@@ -21,6 +21,10 @@ public class AutorViewController implements Observer {
         this.view.setVisible(false);
     }
     
+    public void IrParaNovaSubmissao(){
+    
+    }
+    
     
     
     public void update() {//Implementado do Observer
