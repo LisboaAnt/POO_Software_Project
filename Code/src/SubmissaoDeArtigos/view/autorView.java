@@ -181,12 +181,11 @@ public class AutorView extends javax.swing.JFrame implements Observer {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonNovoArtigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonNovoArtigoActionPerformed
-        controller.NovoArtigo();
-        
+        controller.NovoArtigo(); 
     }//GEN-LAST:event_buttonNovoArtigoActionPerformed
 
     private void buttonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSairActionPerformed
-        // TODO add your handling code here:
+         System.exit(0);
     }//GEN-LAST:event_buttonSairActionPerformed
 
     /**
