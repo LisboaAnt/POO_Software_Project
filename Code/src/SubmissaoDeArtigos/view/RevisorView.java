@@ -7,7 +7,7 @@ import javax.swing.JFrame;
 public class RevisorView extends javax.swing.JFrame implements Observer {
     
     private Model model;
-    private RevisorController controller;
+    private RevisorController controller ;
     //Outros atributos..
     
     public RevisorView() {
@@ -21,9 +21,9 @@ public class RevisorView extends javax.swing.JFrame implements Observer {
     
     public void initRevisorView(Model model){//Inicializa a view Revisor
         this.model = model;
-        RevisorController controll = new RevisorController();
-        this.controller = controll;
-        this.controller.InitUserViewRevisorController(model, this);
+        RevisorController controller = new RevisorController();
+        this.controller = controller;
+        controller.InitUserViewRevisorController(model, this);
         model.attachObserver(this);
         telaRevisor();
     }
@@ -150,8 +150,8 @@ public class RevisorView extends javax.swing.JFrame implements Observer {
     }// </editor-fold>//GEN-END:initComponents
 
     private void AvaliarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AvaliarActionPerformed
-        //implemetar ação no botão
-    controller.alternarTelaAva();
+    //implemetar ação no botão
+    controller.alternarTelaAva(model);
     }//GEN-LAST:event_AvaliarActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed

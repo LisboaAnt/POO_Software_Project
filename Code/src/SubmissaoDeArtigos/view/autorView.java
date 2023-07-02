@@ -29,7 +29,7 @@ public class AutorView extends javax.swing.JFrame implements Observer {
 
     
     // iniciador da tela do autor
-    public void initAutorView(Model model, Autor autor) { // Cria o seu controller passando o Model
+    public void initAutorView(Model model) { // Cria o seu controller passando o Model
         this.model = model;
         this.autor = autor;
         AutorViewController contr1 = new AutorViewController();	// Cria seu controller

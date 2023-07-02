@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 
 public class AvaliacaoView extends javax.swing.JFrame implements Observer {
     private Model model;
-    private AvaliacaoController controller;
+    private AvaliacaoController controller = new AvaliacaoController();
    //Outros atributos...
     
     public AvaliacaoView() {
