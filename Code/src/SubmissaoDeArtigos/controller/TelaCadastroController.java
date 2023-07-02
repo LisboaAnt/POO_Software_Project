@@ -4,6 +4,7 @@ import SubmissaoDeArtigos.model.*;
 import SubmissaoDeArtigos.view.*;
 
 public class TelaCadastroController implements Observer {
+    DAO dao = DAO.getInstance();
     private Model model; //Guarda o MODEL GERAL!!
     private TelaCadastro view; //Guarda a sua view
     
@@ -17,35 +18,46 @@ public class TelaCadastroController implements Observer {
     
     
     
-    public String login(String email,String senha){
-        DAO dao = DAO.getInstance();
+    public String login(String email,String senha, String tipo){
         
-        Pessoa pessoa = dao.verificarLogin(email, senha);    
-        if(pessoa != null){
-
-            if(pessoa.getVinculacao().equals("Autor")){
-                
-                AutorView view = new AutorView();
-                view.initAutorView(model);
-                view.setVisible(true);
-                view.setVisible(false);
-            
-            
-            }
-        }else{
-            
-            return "Valores invalidos";
-            
+        if(email.length() ==0 || senha.length() == 0 || tipo == "..."){
+        return "VALORES IVALIDOS";
+        }
+        if(tipo == "Autor"){
+        Autor autor = dao.verificarLoginAutor(email, senha);
+        if(autor == null){return "NÃO ENCONTRADO";}
+       
         }
         
-        return "";
-    }
+        if(tipo == "Revista"){
+        Pessoa pessoa = dao.verificarLogin(email, senha);
+        
+        return "NÃO ENCONTRADO";
+        }
+        
+        if(tipo == "Revisor"){
+        Revisor revisor = dao.verificarLoginRevisor(email, senha);
+        
+        return "NÃO ENCONTRADO";
+        }
+        
+        return "VALORES IVALIDOS";
+        
+
+            
+}
     
    public String cadastro(String nome, String email, String senha,String tipo){
     
+       if(tipo == "Autor"){
+       Autor autor = new Autor(nome,email,senha,tipo);
+       dao.(autor);
+       
+       }
+           
+           
     Pessoa pessoa = new Pessoa(nome,email,senha,tipo);
     
-    DAO dao = DAO.getInstance();
     dao.databaseInsert(pessoa);
        
     return "ADICIONADO COM SUSESSO";
