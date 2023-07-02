@@ -43,6 +43,7 @@ public class AutorView extends javax.swing.JFrame implements Observer {
     java.awt.EventQueue.invokeLater(new Runnable() {
         public void run() {
             setVisible(true);
+            
         }
     });
 }
@@ -74,11 +75,14 @@ public class AutorView extends javax.swing.JFrame implements Observer {
         listaTodosArtigos = new javax.swing.JList<>();
         buttonNovoArtigo = new javax.swing.JButton();
         buttonSair = new javax.swing.JButton();
+        IrSubButton = new javax.swing.JButton();
+        irArtButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         textSubmissoes.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        textSubmissoes.setText("Suas Submissões");
+        textSubmissoes.setText("Suas Submissoes");
 
         listSubmissoes.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -111,6 +115,10 @@ public class AutorView extends javax.swing.JFrame implements Observer {
             }
         });
 
+        IrSubButton.setText("Ir");
+
+        irArtButton.setText("Ir");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -122,18 +130,30 @@ public class AutorView extends javax.swing.JFrame implements Observer {
                         .addComponent(buttonNovoArtigo)
                         .addGap(109, 109, 109)
                         .addComponent(buttonSair))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 629, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 629, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(textSubmissoes)
+                                .addGap(473, 473, 473))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(textArtigos)
                             .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(textSubmissoes, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(textArtigos, javax.swing.GroupLayout.Alignment.LEADING)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(31, 31, 31)
+                                .addGap(25, 25, 25)
                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 629, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(334, Short.MAX_VALUE))
+                .addContainerGap(140, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(IrSubButton)
+                        .addGap(165, 165, 165))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(irArtButton)
+                        .addGap(162, 162, 162))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -142,11 +162,15 @@ public class AutorView extends javax.swing.JFrame implements Observer {
                 .addComponent(textSubmissoes)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(IrSubButton)
+                .addGap(18, 18, 18)
                 .addComponent(textArtigos)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 131, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(irArtButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buttonNovoArtigo)
                     .addComponent(buttonSair))
@@ -157,7 +181,8 @@ public class AutorView extends javax.swing.JFrame implements Observer {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonNovoArtigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonNovoArtigoActionPerformed
-        // TODO add your handling code here:
+        controller.NovoArtigo();
+        
     }//GEN-LAST:event_buttonNovoArtigoActionPerformed
 
     private void buttonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSairActionPerformed
@@ -201,8 +226,10 @@ public class AutorView extends javax.swing.JFrame implements Observer {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton IrSubButton;
     private javax.swing.JButton buttonNovoArtigo;
     private javax.swing.JButton buttonSair;
+    private javax.swing.JButton irArtButton;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JList<String> listSubmissoes;
