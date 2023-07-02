@@ -32,7 +32,7 @@ public class DataInserter {
         }
     }
 
-        public static void insertRevisor(Revisor revisor){
+        public void insertRevisor(Revisor revisor){
         String sql = "INSERT INTO Revirsor (nome, senha, enderecoEmail,especialidade) VALUES (?, ?, ?, ?)";
         try (Connection conn = DriverManager.getConnection("jdbc:derby:banco");
              PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -46,7 +46,7 @@ public class DataInserter {
             e.printStackTrace();
         }
     }
-        public static void insertEdicao(Edicao edicao){
+        public void insertEdicao(Edicao edicao){
         String sql = "INSERT INTO Edicao (Titulo, Numero,Trilha) VALUES (?, ?, ?)";
         try (Connection conn = DriverManager.getConnection("jdbc:derby:banco");
              PreparedStatement stmt = conn.prepareStatement(sql)) {

@@ -34,7 +34,7 @@ public class DAO {
     
     public void databaseInset(Edicao edicao){
         DataInserter add = new DataInserter(); 
-        add.
+        add.insertEdicao(edicao);
     }
     
     
