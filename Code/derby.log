@@ -1,12 +1,12 @@
 ----------------------------------------------------------------
-Sun Jul 02 09:30:36 BRT 2023:
- Inicializando o Derby versão The Apache Software Foundation - Apache Derby - 10.16.1.1 - (1901046): instância a816c00e-0189-1695-643d-000002d64298
-no diretório de banco de dados C:\Users\Windows 10\Desktop\ooo\POO_Software_Project\Code\banco 
+Sun Jul 02 10:30:35 BRT 2023:
+ Inicializando o Derby versão The Apache Software Foundation - Apache Derby - 10.16.1.1 - (1901046): instância a816c00e-0189-16cc-4d56-0000052886b8
+no diretório de banco de dados C:\Users\levia\OneDrive\Área de Trabalho\trabalhoPOO\POO_Software_Project\Code\banco 
 
 java.vendor=Oracle Corporation
 java.runtime.version=20.0.1+9-29
-user.dir=C:\Users\Windows 10\Desktop\ooo\POO_Software_Project\Code
-os.name=Windows 10
+user.dir=C:\Users\levia\OneDrive\Área de Trabalho\trabalhoPOO\POO_Software_Project\Code
+os.name=Windows 11
 os.arch=amd64
 os.version=10.0
 derby.system.home=null

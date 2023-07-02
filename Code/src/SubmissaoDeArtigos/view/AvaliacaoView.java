@@ -17,8 +17,9 @@ public class AvaliacaoView extends javax.swing.JFrame implements Observer {
     }
     public void initAvaliacaoView(Model model){
         this.model = model;
-        controller = new AvaliacaoController();
-        controller.initUserViewAvaliacaoController(model, this);
+        AvaliacaoController controll = new AvaliacaoController();
+        this.controller = controll;
+        this.controller.initUserViewAvaliacaoController(model, this);
         model.attachObserver(this);
         telaAvaliacao();
     }
