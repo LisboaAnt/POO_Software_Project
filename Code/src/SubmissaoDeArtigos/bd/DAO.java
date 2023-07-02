@@ -32,6 +32,10 @@ public class DAO {
         add.insertRevisor(revisor);
     }
     
+    public void databaseInset(Edicao edicao){
+        DataInserter add = new DataInserter(); 
+        add.
+    }
     
     
     public void databaseInsert(Pessoa pessoa){
