@@ -21,8 +21,9 @@ public class RevisorView extends javax.swing.JFrame implements Observer {
     
     public void initRevisorView(Model model){//Inicializa a view Revisor
         this.model = model;
-        controller = new RevisorController();
-        controller.InitUserViewRevisorController(model, this);
+        RevisorController controll = new RevisorController();
+        this.controller = controll;
+        this.controller.InitUserViewRevisorController(model, this);
         model.attachObserver(this);
         telaRevisor();
     }
@@ -150,9 +151,7 @@ public class RevisorView extends javax.swing.JFrame implements Observer {
 
     private void AvaliarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AvaliarActionPerformed
         //implemetar ação no botão
-        AvaliacaofinalView viewAvaliar = new AvaliacaofinalView();//Criada instância da view de avaliação
-        viewAvaliar.setVisible(true);//Torna a view de avaliação visível
-        dispose(); //Fecha a view de revisor ao abrir a view de avaliação
+    controller.alternarTelaAva();
     }//GEN-LAST:event_AvaliarActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
