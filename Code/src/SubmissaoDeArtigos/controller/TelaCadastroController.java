@@ -35,13 +35,8 @@ public class TelaCadastroController implements Observer {
             
             return "Valores invalidos";
             
-        if(email.length() ==0 || senha.length() == 0 || tipo == "..."){
-        return "VALORES IVALIDOS";
         }
-        if(tipo == "Autor"){
-            Autor autor = dao.verificarLoginAutor(email, senha);
-            if(autor != null){return ("Nome :"+autor.getNome()+ " Id :"+autor.getId());}
-
+        
         
         if(tipo == "Revista"){
         Pessoa pessoa = dao.verificarLoginPessoa(email, senha);
