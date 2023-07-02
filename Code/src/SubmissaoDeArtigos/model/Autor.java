@@ -73,15 +73,34 @@ public class Autor extends Pessoa {
     
     
     //
-    public String getArtigosIds(){
-    StringBuilder sb = new StringBuilder();
-    for (Artigo artigo : artigos) {
-        sb.append(artigo.getId()).append(",");
+    public String getArtigosIds() {
+        if (artigos == null) {
+            return ""; // Retorna uma string vazia se a lista de artigos for nula
+        }
+
+        StringBuilder sb = new StringBuilder();
+        for (Artigo artigo : artigos) {
+            sb.append(artigo.getId()).append(",");
+        }
+        if (sb.length() > 0) {
+            sb.deleteCharAt(sb.length() - 1); // Remove a última vírgula
+        }
+        return sb.toString();
     }
-    if (sb.length() > 0) {
-        sb.deleteCharAt(sb.length() - 1); // Remove the last comma
-    }
-    return sb.toString();
+
+    public String getHPIds() {
+        if (historicoDePublicacoes == null) {
+            return ""; // Retorna uma string vazia se o histórico de publicações for nulo
+        }
+
+        StringBuilder sb = new StringBuilder();
+        for (Artigo artigo : historicoDePublicacoes) {
+            sb.append(artigo.getId()).append(",");
+        }
+        if (sb.length() > 0) {
+            sb.deleteCharAt(sb.length() - 1); // Remove a última vírgula
+        }
+        return sb.toString();
     }
 }
 

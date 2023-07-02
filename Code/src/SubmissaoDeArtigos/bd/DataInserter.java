@@ -32,7 +32,7 @@ public class DataInserter {
         }
     }
 
-        public static void insertRevisor(Revisor revisor){
+        public void insertRevisor(Revisor revisor){
         String sql = "INSERT INTO Revirsor (nome, senha, enderecoEmail,especialidade) VALUES (?, ?, ?, ?)";
         try (Connection conn = DriverManager.getConnection("jdbc:derby:banco");
              PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -46,7 +46,23 @@ public class DataInserter {
             e.printStackTrace();
         }
     }
+        public void insertEdicao(Edicao edicao){
+        String sql = "INSERT INTO Edicao (Titulo, Numero,Trilha) VALUES (?, ?, ?)";
+        try (Connection conn = DriverManager.getConnection("jdbc:derby:banco");
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, edicao.getTitulo());
+            stmt.setInt(2, edicao.getNumero());
+            stmt.setString(3, edicao.getTrilha());
+            stmt.executeUpdate();
+            stmt.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
     
+    
+        
+        
     
     
     
@@ -60,7 +76,7 @@ public class DataInserter {
             stmt.setString(3, autor.getEnderecoEmail());
             stmt.setString(4, autor.getArtigosIds());
             stmt.setString(5, autor.getVinculacao());
-            stmt.setString(6, autor.getHistoricoDePublicacoesIds());
+            stmt.setString(6, autor.getHPIds());
 
             int rowsAffected = stmt.executeUpdate();
             if (rowsAffected > 0) {
