@@ -58,5 +58,30 @@ public class Autor extends Pessoa {
     public void setHistoricoDePublicacoes(ArrayList<Artigo> historicoDePublicacoes) {
         this.historicoDePublicacoes = historicoDePublicacoes;
     }
+    
+    //
+    public String getHistoricoDePublicacoesIds() {
+    StringBuilder sb = new StringBuilder();
+    for (Artigo artigo : historicoDePublicacoes) {
+        sb.append(artigo.getId()).append(",");
+    }
+    if (sb.length() > 0) {
+        sb.deleteCharAt(sb.length() - 1); // Remove the last comma
+    }
+    return sb.toString();
+}
+    
+    
+    //
+    public String getArtigosIds(){
+    StringBuilder sb = new StringBuilder();
+    for (Artigo artigo : artigos) {
+        sb.append(artigo.getId()).append(",");
+    }
+    if (sb.length() > 0) {
+        sb.deleteCharAt(sb.length() - 1); // Remove the last comma
+    }
+    return sb.toString();
+    }
 }
 

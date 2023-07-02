@@ -40,7 +40,9 @@ public class DatabaseInitializer {
                     "nome VARCHAR(255) NOT NULL," +
                     "dataDeNasc DATE," +
                     "enderecoEmail VARCHAR(255)," +
+                    "artigos VARCHAR(1000) NOT NULL)"+
                     "vinculacao VARCHAR(255)," +
+                    "historicoDePublicacoes VARCHAR(1000) NOT NULL"+
                     "PRIMARY KEY (id))");
 
             stmt.execute("CREATE TABLE Revisor (" +

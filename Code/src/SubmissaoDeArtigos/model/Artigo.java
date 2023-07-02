@@ -11,6 +11,7 @@ import java.sql.Date;
  * @author Francisco Levi Souza Anastácio
  */
 public class Artigo {
+    private int id;
     private String titulo;
     private Revisor[] revisores;
     private String resumo;
@@ -74,4 +75,13 @@ public class Artigo {
     public void setDataDePublicacao(Date dataDePublicacao){
         this.dataDePublicacao = dataDePublicacao;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
 }
