@@ -16,20 +16,20 @@ public class main { //poe o derby na libraries na classpath
         
         Model model = new Model(); // Primeiro instancia-se o modelo
         
-<<<<<<< HEAD
+
         TelaRevista view = new TelaRevista();
         //MainView view = new MainView(); // Depois cria-se a primeira view
         view.initTelaRevista(model); // Por fim, inicializa a view passando o modelo
         RevisorView view2 = new RevisorView();
         view2.initRevisorView(model);
-=======
+
         //TelaRevista view = new TelaRevista();
-         MainView view = new MainView(); // Depois cria-se a primeira view
-         view.initMainView(model);
+         //MainView view = new MainView(); // Depois cria-se a primeira view
+         //view.initMainView(model);
         //view.initTelaRevista(model); // Por fim, inicializa a view passando o modelo
         //RevisorView view2 = new RevisorView();
         //view2.initRevisorView(model);
->>>>>>> 295b5456b557042fdae5b7e9109d042dcd1fa7b8
+
             
         DAO dao = DAO.getInstance();
         //dao.DatabaseInitializer();
