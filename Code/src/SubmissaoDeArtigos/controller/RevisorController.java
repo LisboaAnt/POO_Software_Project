@@ -15,6 +15,13 @@ public class RevisorController implements Observer{
     @Override
     public void update(){
     }
+    
+    public void alternarTelaAva(){
+        AvaliacaoView viewAvaliar = new AvaliacaoView();
+        viewAvaliar.initAvaliacaoView(model);
+        viewAvaliar.setVisible(true);
+        this.view.setVisible(false);
+    }
 }
 
 
