@@ -3,8 +3,8 @@ import SubmissaoDeArtigos.model.*;
 import SubmissaoDeArtigos.view.*;
 
 public class RevisorController implements Observer{
-    private Model model;
-    private RevisorView view;
+     Model model;
+     RevisorView view;
     
     public void InitUserViewRevisorController(Model model, RevisorView view){
         this.model = model;
@@ -16,7 +16,7 @@ public class RevisorController implements Observer{
     public void update(){
     }
     
-    public void alternarTelaAva(){
+    public void alternarTelaAva(Model model){
         AvaliacaoView viewAvaliar = new AvaliacaoView();
         viewAvaliar.initAvaliacaoView(model);
         viewAvaliar.setVisible(true);
