@@ -26,7 +26,7 @@ public class AvaliacaofinalView extends javax.swing.JFrame implements Observer {
     public void telaAvaliacao(){
         java.awt.EventQueue.invokeLater(new Runnable() {
                  public void run() {
-                     new AvaliacaofinalView().setVisible(true);
+                     setVisible(true);
                  }
              });
     }

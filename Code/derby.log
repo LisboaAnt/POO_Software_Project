@@ -1,17 +1,13 @@
 ----------------------------------------------------------------
-<<<<<<< HEAD
-Sun Jul 02 14:25:32 BRT 2023:
- Inicializando o Derby versão The Apache Software Foundation - Apache Derby - 10.16.1.1 - (1901046): instância a816c00e-0189-17a3-6867-000005213360
+Sun Jul 02 15:00:59 BRT 2023:
+ Inicializando o Derby versão The Apache Software Foundation - Apache Derby - 10.16.1.1 - (1901046): instância a816c00e-0189-17c3-dbd5-000005189dc0
 no diretório de banco de dados C:\Users\levia\OneDrive\Área de Trabalho\trabalhoPOO\POO_Software_Project\Code\banco 
 
-=======
-Sun Jul 02 13:54:21 BRT 2023D001 : [0] The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585), [1] a816c00e-0189-1786-dd15-000004f87fc8, [2] C:\Users\anton\Área de Trabalho\POO FINAL\POO_Software_Project\Code\banco, [3] jdk.internal.loader.ClassLoaders$AppClassLoader@5caf905d, [4] file:/C:/Users/anton/Documentos/db-derby-10.15.2.0-bin/db-derby-10.15.2.0-bin/lib/derby.jar
->>>>>>> 6990c420abf239255be54bd1221f41f9de510c39
 java.vendor=Oracle Corporation
-java.runtime.version=19.0.2+7-44
-user.dir=C:\Users\anton\Área de Trabalho\POO FINAL\POO_Software_Project\Code
+java.runtime.version=20.0.1+9-29
+user.dir=C:\Users\levia\OneDrive\Área de Trabalho\trabalhoPOO\POO_Software_Project\Code
 os.name=Windows 11
 os.arch=amd64
 os.version=10.0
 derby.system.home=null
-C005 : [0] 
+Carregador de classe do banco de dados iniciado - derby.database.classpath=''

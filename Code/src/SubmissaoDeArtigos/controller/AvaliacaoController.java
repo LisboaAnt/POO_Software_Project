@@ -15,6 +15,12 @@ public class AvaliacaoController implements Observer{
     
     public void update(){
     }
+    public void prox(){
+        AvaliacaoView view = new AvaliacaoView();
+        view.initAvaliacaoView(model);
+        view.setVisible(true);
+        view.setVisible(false);
     
+    }
     
 }

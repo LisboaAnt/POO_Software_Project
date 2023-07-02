@@ -26,7 +26,7 @@ public class AvaliacaoView extends javax.swing.JFrame implements Observer {
     public void telaAvaliacao(){
         java.awt.EventQueue.invokeLater(new Runnable() {
                  public void run() {
-                     new AvaliacaoView().setVisible(true);
+                     setVisible(true);
                  }
              });
     }
@@ -212,7 +212,8 @@ public class AvaliacaoView extends javax.swing.JFrame implements Observer {
     }//GEN-LAST:event_nota4ActionPerformed
 
     private void proximoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_proximoActionPerformed
-        // TODO add your handling code here:
+        controller.prox();
+        dispose();
     }//GEN-LAST:event_proximoActionPerformed
 
     /**

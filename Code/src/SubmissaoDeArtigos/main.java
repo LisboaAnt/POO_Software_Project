@@ -19,8 +19,8 @@ public class main { //poe o derby na libraries na classpath
         TelaRevista view = new TelaRevista();
         //MainView view = new MainView(); // Depois cria-se a primeira view
         view.initTelaRevista(model); // Por fim, inicializa a view passando o modelo
-        //RevisorView view2 = new RevisorView();
-        //view2.initRevisorView(model);
+        RevisorView view2 = new RevisorView();
+        view2.initRevisorView(model);
             
         DAO dao = DAO.getInstance();
         //dao.DatabaseInitializer();
