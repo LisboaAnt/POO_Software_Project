@@ -8,12 +8,12 @@ package SubmissaoDeArtigos.view.Revista;
  *
  * @author mcair
  */
-public class TelaNovaEdicao extends javax.swing.JFrame {
+public class CriarEdicaoView extends javax.swing.JFrame {
 
     /**
      * Creates new form TelaNovaEdicao
      */
-    public TelaNovaEdicao() {
+    public CriarEdicaoView() {
         initComponents();
     }
 
@@ -47,7 +47,7 @@ public class TelaNovaEdicao extends javax.swing.JFrame {
         button2.setLabel("cancelar");
         button2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button2ActionPerformed(evt);
+                ActionListener(evt);
             }
         });
 
@@ -99,9 +99,9 @@ public class TelaNovaEdicao extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
+    private void ActionListener(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActionListener
         // TODO add your handling code here:
-    }//GEN-LAST:event_button2ActionPerformed
+    }//GEN-LAST:event_ActionListener
 
     /**
      * @param args the command line arguments
@@ -120,20 +120,21 @@ public class TelaNovaEdicao extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaNovaEdicao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CriarEdicaoView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaNovaEdicao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CriarEdicaoView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaNovaEdicao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CriarEdicaoView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaNovaEdicao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CriarEdicaoView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaNovaEdicao().setVisible(true);
+                new CriarEdicaoView().setVisible(true);
             }
         });
     }

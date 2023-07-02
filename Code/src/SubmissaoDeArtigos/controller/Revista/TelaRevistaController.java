@@ -1,4 +1,4 @@
-package SubmissaoDeArtigos.controller;
+package SubmissaoDeArtigos.controller.Revista;
 
 import SubmissaoDeArtigos.model.Model;
 import SubmissaoDeArtigos.view.Observer;
