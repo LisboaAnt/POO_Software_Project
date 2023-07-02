@@ -153,7 +153,7 @@ public class TelaCadastro extends javax.swing.JFrame implements Observer{
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 0, 0));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -172,7 +172,7 @@ public class TelaCadastro extends javax.swing.JFrame implements Observer{
                                 .addGap(18, 18, 18)
                                 .addComponent(jComboBoxTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE))
                             .addComponent(jTextSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(16, 16, 16)
@@ -182,7 +182,7 @@ public class TelaCadastro extends javax.swing.JFrame implements Observer{
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(133, 133, 133)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -251,8 +251,10 @@ public class TelaCadastro extends javax.swing.JFrame implements Observer{
         
 
         if(this.login == false){
+            if(itemSelecionadoString != "..."){
             String retorna = controller.cadastro(jTextNome.getText(),jTextEmail.getText(), jTextSenha.getText(), itemSelecionadoString);
-        jLabel1.setText(retorna);
+            jLabel1.setText(retorna);
+            }else{jLabel1.setText("Erro");}
         }
         
     }//GEN-LAST:event_jButton2ActionPerformed

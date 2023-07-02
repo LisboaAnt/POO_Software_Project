@@ -24,20 +24,21 @@ public class TelaCadastroController implements Observer {
         return "VALORES IVALIDOS";
         }
         if(tipo == "Autor"){
-        Autor autor = dao.verificarLoginAutor(email, senha);
-        if(autor == null){return "NÃO ENCONTRADO";}
-       
+            Autor autor = dao.verificarLoginAutor(email, senha);
+            if(autor != null){return ("Nome :"+autor.getNome()+ " Id :"+autor.getId());}
         }
         
         if(tipo == "Revista"){
-        Pessoa pessoa = dao.verificarLogin(email, senha);
+        Pessoa pessoa = dao.verificarLoginPessoa(email, senha);
+        if(pessoa !=null){return ("Nome :"+pessoa.getNome()+ " Id :"+pessoa.getId());}
         
         return "NÃO ENCONTRADO";
         }
         
         if(tipo == "Revisor"){
-        Revisor revisor = dao.verificarLoginRevisor(email, senha);
-        
+        //Revisor revisor = dao.verificarLoginRevisor(email, senha);
+                Revisor revisor = dao.verificarLoginRevisor(email, senha);
+        if(revisor !=null){return ("Nome :"+revisor.getNome()+ " Id :"+revisor.getId());}
         return "NÃO ENCONTRADO";
         }
         
@@ -49,18 +50,28 @@ public class TelaCadastroController implements Observer {
     
    public String cadastro(String nome, String email, String senha,String tipo){
     
+       if(email.length() ==0 || senha.length() == 0 || tipo == "..."){
+        return "VALORES IVALIDOS";
+        }
+       
+       
        if(tipo == "Autor"){
        Autor autor = new Autor(nome,email,senha,tipo);
-       dao.(autor);
-       
+       dao.databaseInset(autor);
+       return "ADICIONADO COM SUCESSO";
        }
            
-           
-    Pessoa pessoa = new Pessoa(nome,email,senha,tipo);
-    
-    dao.databaseInsert(pessoa);
+       if(tipo == "Revista"){
+       Pessoa pessoa = new Pessoa(nome,email,senha,tipo);
+       dao.databaseInsert(pessoa);
+       return "ADICIONADO COM SUCESSO";
+       }
        
-    return "ADICIONADO COM SUSESSO";
+       if(tipo == "Revisor"){
+       return "Só revista pode cadastrar Revisor";
+       }
+
+    return "";
    }
     
     

@@ -76,7 +76,7 @@ public class DataInserter {
             stmt.setString(3, autor.getEnderecoEmail());
             stmt.setString(4, autor.getArtigosIds());
             stmt.setString(5, autor.getVinculacao());
-            stmt.setString(6, autor.getHistoricoDePublicacoesIds());
+            stmt.setString(6, autor.getHPIds());
 
             int rowsAffected = stmt.executeUpdate();
             if (rowsAffected > 0) {

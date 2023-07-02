@@ -37,6 +37,11 @@ public class DAO {
         add.insertEdicao(edicao);
     }
     
+    public void databaseInset(Autor autor){
+        DataInserter add = new DataInserter(); 
+        add.insertAutor(autor);
+    }
+    
     
     public void databaseInsert(Pessoa pessoa){
         DataInserter add = new DataInserter(); // cria o objeto insert
@@ -56,9 +61,10 @@ public class DAO {
     public void DatabaseDelete(String tabela){
         ext.excluirTodosRegistros(tabela);
     }
+
     //
     
-    public Autor verificarLoginAutor(String email, String senha){
+    public Revisor verificarLoginRevisor(String email, String senha) {
         Connection conn = null;
         try {
             conn = DriverManager.getConnection("jdbc:derby:banco");
@@ -71,7 +77,47 @@ public class DAO {
                 String nome = resultSet.getString("nome");
                 String enderecoEmail = resultSet.getString("enderecoEmail");
                 String senha1 = resultSet.getString("senha");
+                String especialidade1 = resultSet.getString("especialidade");
+                Revisor revisor = new Revisor( nome, enderecoEmail,senha1, especialidade1);
+                revisor.setId(id);
+                resultSet.close();
+                statement.close();
+                conn.close();
+                return revisor;
+            } else {
+                resultSet.close();
+                statement.close();
+                conn.close();
+                return null; // Login inválido, nenhum registro encontrado
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException("Erro ao verificar o login no banco de dados: " + e.getMessage());
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    //
+public Autor verificarLoginAutor(String email, String senha) {
+        Connection conn = null;
+        try {
+            conn = DriverManager.getConnection("jdbc:derby:banco");
+            PreparedStatement statement = conn.prepareStatement("SELECT * FROM Autor WHERE enderecoEmail = ? AND senha = ?");
+            statement.setString(1, email);
+            statement.setString(2, senha);
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String nome = resultSet.getString("nome");
+                String enderecoEmail = resultSet.getString("enderecoEmail");
+                String senha1 = resultSet.getString("senha");
+                String artigos = resultSet.getString("artigos");
                 String vinculacao = resultSet.getString("vinculacao");
+                String publicaocoes = resultSet.getString("historicoDePublicacoes");
                 Autor autor = new Autor( nome, enderecoEmail,senha1, vinculacao);
                 autor.setId(id);
                 resultSet.close();
@@ -89,10 +135,8 @@ public class DAO {
         }
     }
     
-    
-    
     //Verificar login
-    public Pessoa verificarLogin(String email, String senha) {
+    public Pessoa verificarLoginPessoa(String email, String senha) {
         Connection conn = null;
         try {
             conn = DriverManager.getConnection("jdbc:derby:banco");
