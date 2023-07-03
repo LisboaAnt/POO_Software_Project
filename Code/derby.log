@@ -1,5 +1,7 @@
 ----------------------------------------------------------------
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 Sun Jul 02 23:31:23 BRT 2023:
  Inicializando o Derby versão The Apache Software Foundation - Apache Derby - 10.16.1.1 - (1901046): instância a816c00e-0189-1997-2794-00000299e3e0
 no diretório de banco de dados C:\Users\Windows 10\Desktop\ooo\POO_Software_Project\Code\banco 
@@ -7,6 +9,12 @@ no diretório de banco de dados C:\Users\Windows 10\Desktop\ooo\POO_Software_Proj
 =======
 Sun Jul 02 23:27:42 BRT 2023D001 : [0] The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585), [1] a816c00e-0189-1993-c762-00000557f688, [2] C:\Users\anton\Área de Trabalho\POO FINAL\POO_Software_Project\Code\banco, [3] jdk.internal.loader.ClassLoaders$AppClassLoader@5caf905d, [4] file:/C:/Users/anton/Documentos/db-derby-10.15.2.0-bin/db-derby-10.15.2.0-bin/lib/derby.jar
 >>>>>>> e6efe69b460f5bd09c534c1803cab2b7307f05fe
+=======
+Sun Jul 02 23:37:19 BRT 2023D001 : [0] The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585), [1] a816c00e-0189-199c-94f7-000004f88da0, [2] C:\Users\anton\Área de Trabalho\POO FINAL\POO_Software_Project\Code\banco, [3] jdk.internal.loader.ClassLoaders$AppClassLoader@5caf905d, [4] file:/C:/Users/anton/Documentos/db-derby-10.15.2.0-bin/db-derby-10.15.2.0-bin/lib/derby.jar
+>>>>>>> 101c0834552565fcff7a1bdb1c5b283d2931690b
+=======
+Sun Jul 02 23:35:55 BRT 2023D001 : [0] The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585), [1] a816c00e-0189-199b-4cff-000004f7f568, [2] C:\Users\anton\Área de Trabalho\POO FINAL\POO_Software_Project\Code\banco, [3] jdk.internal.loader.ClassLoaders$AppClassLoader@5caf905d, [4] file:/C:/Users/anton/Documentos/db-derby-10.15.2.0-bin/db-derby-10.15.2.0-bin/lib/derby.jar
+>>>>>>> parent of 101c083 (.)
 java.vendor=Oracle Corporation
 java.runtime.version=19.0.2+7-44
 user.dir=C:\Users\anton\Área de Trabalho\POO FINAL\POO_Software_Project\Code
