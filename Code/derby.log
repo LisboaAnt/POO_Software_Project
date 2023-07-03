@@ -1,28 +1,71 @@
 ----------------------------------------------------------------
-<<<<<<< HEAD
-Sun Jul 02 21:25:50 BRT 2023:
- Inicializando o Derby versão The Apache Software Foundation - Apache Derby - 10.16.1.1 - (1901046): instância a816c00e-0189-1924-3301-000002d28298
+Sun Jul 02 22:04:08 BRT 2023:
+ Inicializando o Derby versão The Apache Software Foundation - Apache Derby - 10.16.1.1 - (1901046): instância a816c00e-0189-1947-4615-000002d23678
 no diretório de banco de dados C:\Users\Windows 10\Desktop\ooo\POO_Software_Project\Code\banco 
 
 java.vendor=Oracle Corporation
 java.runtime.version=20.0.1+9-29
 user.dir=C:\Users\Windows 10\Desktop\ooo\POO_Software_Project\Code
 os.name=Windows 10
-=======
-<<<<<<< HEAD
-Sun Jul 02 17:09:32 BRT 2023:
- Inicializando o Derby versão The Apache Software Foundation - Apache Derby - 10.16.1.1 - (1901046): instância a816c00e-0189-1839-8e86-000005189dc0
-no diretório de banco de dados C:\Users\levia\OneDrive\Área de Trabalho\trabalhoPOO\POO_Software_Project\Code\banco 
-
-=======
-Sun Jul 02 16:57:46 BRT 2023D001 : [0] The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585), [1] a816c00e-0189-182e-c96c-000005086fc0, [2] C:\Users\anton\Área de Trabalho\POO FINAL\POO_Software_Project\Code\banco, [3] jdk.internal.loader.ClassLoaders$AppClassLoader@5caf905d, [4] file:/C:/Users/anton/Documentos/db-derby-10.15.2.0-bin/db-derby-10.15.2.0-bin/lib/derby.jar
->>>>>>> 295b5456b557042fdae5b7e9109d042dcd1fa7b8
-java.vendor=Oracle Corporation
-java.runtime.version=20.0.1+9-29
-user.dir=C:\Users\levia\OneDrive\Área de Trabalho\trabalhoPOO\POO_Software_Project\Code
-os.name=Windows 11
->>>>>>> 40d4e8584052f1514d317f89b6644663b00a2f3c
 os.arch=amd64
 os.version=10.0
 derby.system.home=null
 Carregador de classe do banco de dados iniciado - derby.database.classpath=''
+Sun Jul 02 22:04:21 BRT 2023 Thread[#24,AWT-EventQueue-0,6,main] (XID = 3484), (SESSIONID = 3), (DATABASE = banco), (DRDAID = null), Cleanup action starting
+Sun Jul 02 22:04:21 BRT 2023 Thread[#24,AWT-EventQueue-0,6,main] (XID = 3484), (SESSIONID = 3), (DATABASE = banco), (DRDAID = null), Failed Statement is: SELECT * FROM Pessoa WHERE enderecoEmail = ? AND senha = ?
+java.lang.NullPointerException: Cannot invoke "org.apache.derby.iapi.sql.dictionary.ConglomerateDescriptor.getConglomerateNumber()" because "<local1>" is null
+	at org.apache.derby.iapi.sql.dictionary.TableDescriptor.getHeapConglomerateId(TableDescriptor.java:390)
+	at org.apache.derby.impl.sql.compile.FromBaseTable.bindNonVTITables(FromBaseTable.java:2486)
+	at org.apache.derby.impl.sql.compile.FromList.bindTables(FromList.java:348)
+	at org.apache.derby.impl.sql.compile.SelectNode.bindNonVTITables(SelectNode.java:490)
+	at org.apache.derby.impl.sql.compile.DMLStatementNode.bindTables(DMLStatementNode.java:190)
+	at org.apache.derby.impl.sql.compile.DMLStatementNode.bind(DMLStatementNode.java:127)
+	at org.apache.derby.impl.sql.compile.CursorNode.bindStatement(CursorNode.java:283)
+	at org.apache.derby.impl.sql.GenericStatement.prepMinion(GenericStatement.java:401)
+	at org.apache.derby.impl.sql.GenericStatement.prepare(GenericStatement.java:99)
+	at org.apache.derby.impl.sql.conn.GenericLanguageConnectionContext.prepareInternalStatement(GenericLanguageConnectionContext.java:1114)
+	at org.apache.derby.impl.jdbc.EmbedPreparedStatement.<init>(EmbedPreparedStatement.java:134)
+	at org.apache.derby.impl.jdbc.EmbedPreparedStatement42.<init>(EmbedPreparedStatement42.java:41)
+	at org.apache.derby.iapi.jdbc.Driver42.newEmbedPreparedStatement(Driver42.java:56)
+	at org.apache.derby.impl.jdbc.EmbedConnection.prepareStatement(EmbedConnection.java:1735)
+	at org.apache.derby.impl.jdbc.EmbedConnection.prepareStatement(EmbedConnection.java:1563)
+	at SubmissaoDeArtigos.bd.DAO.verificarLoginPessoa(DAO.java:143)
+	at SubmissaoDeArtigos.controller.TelaCadastroController.login(TelaCadastroController.java:22)
+	at SubmissaoDeArtigos.view.TelaCadastro.jButton2ActionPerformed(TelaCadastro.java:248)
+	at SubmissaoDeArtigos.view.TelaCadastro$4.actionPerformed(TelaCadastro.java:99)
+	at java.desktop/javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:1972)
+	at java.desktop/javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2314)
+	at java.desktop/javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:407)
+	at java.desktop/javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:262)
+	at java.desktop/javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:279)
+	at java.desktop/java.awt.Component.processMouseEvent(Component.java:6620)
+	at java.desktop/javax.swing.JComponent.processMouseEvent(JComponent.java:3398)
+	at java.desktop/java.awt.Component.processEvent(Component.java:6385)
+	at java.desktop/java.awt.Container.processEvent(Container.java:2266)
+	at java.desktop/java.awt.Component.dispatchEventImpl(Component.java:4995)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2324)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4827)
+	at java.desktop/java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4948)
+	at java.desktop/java.awt.LightweightDispatcher.processMouseEvent(Container.java:4575)
+	at java.desktop/java.awt.LightweightDispatcher.dispatchEvent(Container.java:4516)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2310)
+	at java.desktop/java.awt.Window.dispatchEventImpl(Window.java:2780)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4827)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:775)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:720)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:714)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:98)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:747)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:745)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:400)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:744)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+Cleanup action completed

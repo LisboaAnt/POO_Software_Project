@@ -10,14 +10,6 @@ package SubmissaoDeArtigos.model;
  */
 public class Artigo {
     private int id;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
     private String titulo;
     private Revisor[] revisores;
     private String conteudo;
@@ -30,7 +22,6 @@ public class Artigo {
     public Artigo(String titulo, Revisor[] revisores, String conteudo, Boolean statusDeRevisao){
         this.titulo = titulo;
         this.revisores = revisores;
-       
         this.conteudo = conteudo;
         this.statusDeRevisao = statusDeRevisao;
     }

@@ -19,7 +19,7 @@ public class TelaCadastroController implements Observer {
    
     public String login(String email,String senha, String tipo){
         
-        Pessoa pessoa = dao.verificarLogin(email, senha);    
+        Pessoa pessoa = dao.verificarLoginPessoa(email, senha);    
         if(pessoa != null){
 
             if(pessoa.getVinculacao().equals("Autor")){
@@ -27,36 +27,14 @@ public class TelaCadastroController implements Observer {
                 AutorView view = new AutorView();
                 view.initAutorView(model);
                 view.setVisible(true);
-                this.view.setVisible(false);
-            
-            
             }
         }else{
             
             return "Valores invalidos";
             
-        }
-        
-        
-        if(tipo == "Revista"){
-        Pessoa pessoa = dao.verificarLoginPessoa(email, senha);
-        if(pessoa !=null){return ("Nome :"+pessoa.getNome()+ " Id :"+pessoa.getId());}
-        
-        return "NÃO ENCONTRADO";
-        }
-        
-        if(tipo == "Revisor"){
-        //Revisor revisor = dao.verificarLoginRevisor(email, senha);
-                Revisor revisor = dao.verificarLoginRevisor(email, senha);
-        if(revisor !=null){return ("Nome :"+revisor.getNome()+ " Id :"+revisor.getId());}
-        return "NÃO ENCONTRADO";
-        }
-        
-        return "VALORES IVALIDOS";
-        
-
-            
-}
+        }      
+        return "Valores invalidos";
+    }
     
    public String cadastro(String nome, String email, String senha,String tipo){
     
