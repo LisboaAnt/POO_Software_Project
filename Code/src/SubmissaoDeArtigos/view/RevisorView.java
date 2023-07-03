@@ -150,6 +150,7 @@ public class RevisorView extends javax.swing.JFrame implements Observer {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void AvaliarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AvaliarActionPerformed
