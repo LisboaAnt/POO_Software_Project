@@ -14,6 +14,7 @@ public class Revisor extends Pessoa {
 
     public Revisor( String nome, String enderecoEmail, String senha, String especialidade) {
         super( nome, enderecoEmail, senha,"Revisor");
+        this.especialidade = especialidade;
     }
 
     public String getEspecialidade() {

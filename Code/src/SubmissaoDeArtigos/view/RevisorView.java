@@ -8,7 +8,9 @@ public class RevisorView extends javax.swing.JFrame implements Observer {
     
     private Model model;
     private RevisorController controller ;
-    //Outros atributos..
+    
+    
+    
     
     public RevisorView() {
         initComponents();
@@ -32,7 +34,7 @@ public class RevisorView extends javax.swing.JFrame implements Observer {
     public void telaRevisor() {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new RevisorView().setVisible(true);
+                setVisible(true);
             }
         });
     }

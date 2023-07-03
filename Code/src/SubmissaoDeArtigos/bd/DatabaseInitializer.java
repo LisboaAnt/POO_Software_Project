@@ -35,14 +35,15 @@ public class DatabaseInitializer {
                     "PRIMARY KEY (id))");
 
 
+
             stmt.execute("CREATE TABLE Autor (" +
                     "id INT NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1)," +
                     "nome VARCHAR(255) NOT NULL," +
-                    "dataDeNasc DATE," +
+                    "senha VARCHAR(255)," +
                     "enderecoEmail VARCHAR(255)," +
-                    "artigos VARCHAR(1000) NOT NULL)"+
+                    "artigos VARCHAR(1000) NOT NULL," +  // Adicionei uma vírgula aqui
                     "vinculacao VARCHAR(255)," +
-                    "historicoDePublicacoes VARCHAR(1000) NOT NULL"+
+                    "historicoDePublicacoes VARCHAR(1000) NOT NULL," +  // Adicionei uma vírgula aqui
                     "PRIMARY KEY (id))");
 
             stmt.execute("CREATE TABLE Revisor (" +
@@ -50,8 +51,14 @@ public class DatabaseInitializer {
                     "nome VARCHAR(255) NOT NULL," +
                     "senha VARCHAR(255) NOT NULL," +
                     "enderecoEmail VARCHAR(255)," +
-                    "especialidade VARCHAR(255)," +
+                    "especialidade VARCHAR(255) NOT NULL," +
                     "PRIMARY KEY (id))");
+            
+            stmt.execute("CREATE TABLE Edicao (" +
+                    "id INT NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1)," +
+                    "titulo VARCHAR(255) NOT NULL," +
+                    "numero VARCHAR(255) NOT NULL," +
+                    "trilha VARCHAR(255),");
 
             stmt.execute("CREATE TABLE Artigo_Autor (" +
                     "artigo_id INT," +
