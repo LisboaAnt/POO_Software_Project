@@ -20,7 +20,9 @@ public class main { //poe o derby na libraries na classpath
 
             
         DAO dao = DAO.getInstance();
-        dao.DatabaseInitializer();
+        Revisor r = new Revisor("Nome","mail","enha","especialidade");
+        dao.databaseInset(r);
+        //dao.DatabaseInitializer();
 
         //Pessoa a = new Pessoa("Luis","lis.gmail", "1235", "Autor");
         //dao.databaseInsert(a);
