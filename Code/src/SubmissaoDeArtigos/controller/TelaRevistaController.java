@@ -1,4 +1,4 @@
-package SubmissaoDeArtigos.controller.Revista;
+package SubmissaoDeArtigos.controller;
 
 import SubmissaoDeArtigos.bd.*;
 import SubmissaoDeArtigos.model.*;

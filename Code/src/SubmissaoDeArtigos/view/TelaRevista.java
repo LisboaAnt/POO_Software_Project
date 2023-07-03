@@ -6,7 +6,7 @@ package SubmissaoDeArtigos.view;
 
 import SubmissaoDeArtigos.bd.*;
 import SubmissaoDeArtigos.controller.ProgramaFechador;
-import SubmissaoDeArtigos.controller.Revista.TelaRevistaController;
+import SubmissaoDeArtigos.controller.TelaRevistaController;
 import SubmissaoDeArtigos.model.*;
 
 /**

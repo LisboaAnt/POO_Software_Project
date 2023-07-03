@@ -8,7 +8,7 @@ public class TelaCadastroController implements Observer {
     private Model model; //Guarda o MODEL GERAL!!
     private TelaCadastro view; //Guarda a sua view
     
-public void update() {//Implementado do Observer
+    public void update() {//Implementado do Observer
     }
     public void initTelaCadastroController(Model model, TelaCadastro view) {
 		this.model = model;  // Guarda o modelo
@@ -19,7 +19,7 @@ public void update() {//Implementado do Observer
     
     
     
-    public String login(String email,String senha, String tipo){
+    public String login(String email,String senha, String tipo){//todos os ligins
         
         if(email.length() ==0 || senha.length() == 0 || tipo == "..."){
         return "VALORES IVALIDOS";
@@ -49,7 +49,7 @@ public void update() {//Implementado do Observer
             
 }
     
-   public String cadastro(String nome, String email, String senha,String tipo){
+   public String cadastro(String nome, String email, String senha,String tipo){ //todos os cadastros
     
        if(email.length() ==0 || senha.length() == 0 || tipo == "..."){
         return "VALORES IVALIDOS";
@@ -71,7 +71,7 @@ public void update() {//Implementado do Observer
        }
        
        if(tipo == "Revisor"){
-       return "S? revista pode cadastrar Revisor";
+       return "Só revista pode cadastrar Revisor";
        }
 
     return "";
