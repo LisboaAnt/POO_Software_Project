@@ -16,21 +16,30 @@ public class main { //poe o derby na libraries na classpath
         
         Model model = new Model(); // Primeiro instancia-se o modelo
         MainView view = new MainView(); // Depois cria-se a primeira view
-<<<<<<< HEAD
         view.initMainView(model);
-=======
-        view.initMainView(model); //passa a model para criar sua controladora
-        
->>>>>>> 101c0834552565fcff7a1bdb1c5b283d2931690b
 
             
         DAO dao = DAO.getInstance();
-        //Revisor r = new Revisor("Nome","email","senha","especialidade");
-        //dao.databaseInset(r); //insere o revisor
-        //dao.DatabaseInitializer(); //Cria a pasta do banco
+        Revisor r = new Revisor("Nome","mail","enha","especialidade");
+        dao.databaseInset(r);
+        //dao.DatabaseInitializer();
 
-        //Pessoa a = new Pessoa("Luis","lis.gmail", "1235", "Autor"); //cria pessoa
-        //dao.databaseInsert(a);//insere pessoa
+        //Pessoa a = new Pessoa("Luis","lis.gmail", "1235", "Autor");
+        //dao.databaseInsert(a);
+        
+        
+        /* BUSCAR LOGIN
+        DatabaseGetter.getDataFromDatabase();
+        Pessoa aa = dao.verificarLogin("lis.gmail", "1235");
+        if(aa != null){System.out.println(aa.toString());
+        }
+        */
+       
+        //RevisorView viewRevisor = new RevisorView();
+        //viewRevisor.initRevisorView(model);
+        // Configura o ProgramaFechador como o listener para o evento de fechamento da janela principal
+
+
              
     }
 }
