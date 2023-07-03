@@ -25,10 +25,6 @@ public class verArtSubmView extends javax.swing.JFrame implements Observer{
         this.controller = controller;
         this.controller.initVerArtSubmController(model, this);
         model.attachObserver(this);
-        
-      
-        
-    
     }
     public void update() {//Implementado do Observer
     }

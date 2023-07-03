@@ -58,6 +58,11 @@ public class editarArtigoView extends javax.swing.JFrame implements Observer {
 
         salvarButton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         salvarButton.setText("Salvar");
+        salvarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                salvarButtonActionPerformed(evt);
+            }
+        });
 
         cancelarButton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         cancelarButton.setText("Cancelar");
@@ -117,6 +122,11 @@ public class editarArtigoView extends javax.swing.JFrame implements Observer {
         this.setVisible(false);
         viewant.setVisible(true);
     }//GEN-LAST:event_cancelarButtonActionPerformed
+
+    private void salvarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarButtonActionPerformed
+        this.setVisible(false);
+        viewant.setVisible(true);
+    }//GEN-LAST:event_salvarButtonActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

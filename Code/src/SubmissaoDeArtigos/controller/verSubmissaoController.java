@@ -27,8 +27,8 @@ public class verSubmissaoController implements Observer {
     }
     
     public void verAva(){
-        verArtSubmView view1 = new verArtSubmView();
-        view1.initVerArtSubmView(model, view);
+        ArtigosAvaView view1 = new ArtigosAvaView();
+        view1.initArtigosAvaView(model, view);
         view1.setVisible(true);
         view.setVisible(false);
     }

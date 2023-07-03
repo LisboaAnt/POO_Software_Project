@@ -17,7 +17,6 @@ public class main { //poe o derby na libraries na classpath
         Model model = new Model(); // Primeiro instancia-se o modelo
         MainView view = new MainView(); // Depois cria-se a primeira view
         view.initMainView(model);
-        
 
             
         DAO dao = DAO.getInstance();

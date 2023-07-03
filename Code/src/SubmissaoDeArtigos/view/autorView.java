@@ -96,11 +96,6 @@ public class AutorView extends javax.swing.JFrame implements Observer {
         textArtigos.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         textArtigos.setText("Seus Artigos");
 
-        listaTodosArtigos.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         jScrollPane2.setViewportView(listaTodosArtigos);
 
         buttonNovoArtigo.setText("Novo Artigo");
@@ -125,6 +120,11 @@ public class AutorView extends javax.swing.JFrame implements Observer {
         });
 
         irArtButton.setText("Ir");
+        irArtButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                irArtButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -207,6 +207,10 @@ public class AutorView extends javax.swing.JFrame implements Observer {
     private void listSubmissoesValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listSubmissoesValueChanged
         // TODO add your handling code here:
     }//GEN-LAST:event_listSubmissoesValueChanged
+
+    private void irArtButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_irArtButtonActionPerformed
+        controller.IrParaArtigo();
+    }//GEN-LAST:event_irArtButtonActionPerformed
     
 
     public static void main(String args[]) {

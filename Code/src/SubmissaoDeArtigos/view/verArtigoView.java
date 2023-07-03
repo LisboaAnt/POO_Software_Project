@@ -5,14 +5,28 @@
 package SubmissaoDeArtigos.view;
 
 
+import SubmissaoDeArtigos.model.Model;
+import SubmissaoDeArtigos.controller.*;
 
-public class verArtigoView extends javax.swing.JFrame {
 
+public class verArtigoView extends javax.swing.JFrame implements Observer{
+
+    private Model model;
+    private AutorView viewant;
+    private verArtigoController controller;
+    
     public verArtigoView() {
         initComponents();
     }
 
-
+public void initVerArtigoView(Model model,AutorView viewant ){
+        this.model = model;
+        this.viewant = viewant;
+        verArtigoController controller = new verArtigoController();
+        this.controller = controller;
+        this.controller.initVerArtigoController(model, this);
+        model.attachObserver(this);
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -36,9 +50,19 @@ public class verArtigoView extends javax.swing.JFrame {
 
         submeterButton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         submeterButton.setText("Submeter");
+        submeterButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submeterButtonActionPerformed(evt);
+            }
+        });
 
         voltarButton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         voltarButton.setText("Voltar");
+        voltarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                voltarButtonActionPerformed(evt);
+            }
+        });
 
         tituloArt1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
@@ -86,7 +110,17 @@ public class verArtigoView extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void voltarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarButtonActionPerformed
+        this.setVisible(false);
+        viewant.setVisible(true);
+    }//GEN-LAST:event_voltarButtonActionPerformed
+
+    private void submeterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submeterButtonActionPerformed
+        controller.SubmeterArtigo();
+    }//GEN-LAST:event_submeterButtonActionPerformed
 
 
     public static void main(String args[]) {
@@ -106,4 +140,9 @@ public class verArtigoView extends javax.swing.JFrame {
     private javax.swing.JLabel tituloArt1;
     private javax.swing.JButton voltarButton;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void update() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

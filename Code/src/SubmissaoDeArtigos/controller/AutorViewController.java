@@ -28,7 +28,12 @@ public class AutorViewController implements Observer {
         this.view.setVisible(false);      
     }
     
-    
+    public void IrParaArtigo(){
+        verArtigoView view = new verArtigoView();
+        view.initVerArtigoView(model, this.view);
+        view.setVisible(true);
+        this.view.setVisible(false);      
+    }    
     
     public void update() {//Implementado do Observer
     }
