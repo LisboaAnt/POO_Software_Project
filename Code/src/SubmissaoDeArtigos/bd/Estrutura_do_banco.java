@@ -5,8 +5,8 @@
 package SubmissaoDeArtigos.bd;
 
 import java.sql.*;
-
-public class DatabaseStructureChecker {
+//Para mostrar você deve executar essa classe, de preferência separadamente, clicando run file
+public class Estrutura_do_banco {
     public static void main(String[] args) {
         String url = "jdbc:derby:banco"; // Substitua "database_name" pelo nome do seu banco de dados
         String user = "username"; // Substitua "username" pelo nome de usuário do seu banco de dados
