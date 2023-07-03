@@ -47,15 +47,14 @@ public class DataInserter {
     
     
         public void insertRevisor(Revisor revisor){
-        String sql = "INSERT INTO Revirsor (nome, senha, enderecoEmail,especialidade) VALUES (?, ?, ?, ?)";
-        try (Connection conn = DriverManager.getConnection("jdbc:derby:banco");
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setString(1, revisor.getNome());
-            stmt.setString(2, revisor.getSenha());
-            stmt.setString(3, revisor.getEnderecoEmail());
-            stmt.setString(4, revisor.getEspecialidade());
-            stmt.executeUpdate();
-            stmt.close();
+        String sql = "INSERT INTO Revisor (nome, senha, enderecoEmail,especialidade) VALUES (?, ?, ?, ?)";
+        try (PreparedStatement statement = conn.prepareStatement(sql)) {
+            statement.setString(1, revisor.getNome());
+            statement.setString(2, revisor.getSenha());
+            statement.setString(3, revisor.getEnderecoEmail());
+            statement.setString(4, revisor.getEspecialidade());
+            statement.executeUpdate();
+            statement.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
