@@ -60,7 +60,7 @@ public class Autor extends Pessoa {
     }
     
     //
-    public String getHistoricoDePublicacoesIds() {
+    public String getHistoricoDePublicacoesIds() {;
     StringBuilder sb = new StringBuilder();
     for (Artigo artigo : historicoDePublicacoes) {
         sb.append(artigo.getId()).append(",");

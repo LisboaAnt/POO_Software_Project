@@ -3,8 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package SubmissaoDeArtigos.model;
-import java.io.File;
-import java.sql.Date;
 
 /**
  *
@@ -14,7 +12,6 @@ public class Artigo {
     private int id;
     private String titulo;
     private Revisor[] revisores;
-    private String resumo;
     private String conteudo;
     private Boolean statusDeRevisao;
 
@@ -22,10 +19,10 @@ public class Artigo {
     public Artigo(){
 
     }
-    public Artigo(String titulo, Revisor[] revisores, String resumo, String conteudo, Boolean statusDeRevisao){
+    public Artigo(String titulo, Revisor[] revisores, String conteudo, Boolean statusDeRevisao){
         this.titulo = titulo;
         this.revisores = revisores;
-        this.resumo = resumo;
+       
         this.conteudo = conteudo;
         this.statusDeRevisao = statusDeRevisao;
     }
@@ -33,6 +30,14 @@ public class Artigo {
     public Artigo(String titulo, String conteudo){
         this.titulo = titulo;
         this.conteudo = conteudo;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
     
     public String getTitulo(){
@@ -47,12 +52,7 @@ public class Artigo {
     public void setRevisores(Revisor[] revisores){
         this.revisores = revisores;
     }
-    public String getResumo(){
-        return resumo;
-    }
-    public void setResumo(String resumo){
-        this.resumo = resumo;
-    }
+    
     public String getConteudo(){
         return conteudo;
     }

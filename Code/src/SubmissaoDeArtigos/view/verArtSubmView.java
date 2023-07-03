@@ -4,17 +4,33 @@
  */
 package SubmissaoDeArtigos.view;
 
-/**
- *
- * @author Windows 10
- */
-public class verArtSubmView extends javax.swing.JFrame {
+import SubmissaoDeArtigos.model.*;
+import SubmissaoDeArtigos.controller.*;
+ 
+public class verArtSubmView extends javax.swing.JFrame implements Observer{
 
-    /**
-     * Creates new form verArtigoView
-     */
+    private Model model;
+    private verSubmissaoView viewant;
+    private verArtSubmController controller;
+    
+    
     public verArtSubmView() {
         initComponents();
+    }
+    
+    public void initVerArtSubmView(Model model,verSubmissaoView viewant ){
+        this.model = model;
+        this.viewant = viewant;
+        verArtSubmController controller = new verArtSubmController();
+        this.controller = controller;
+        this.controller.initVerArtSubmController(model, this);
+        model.attachObserver(this);
+        
+      
+        
+    
+    }
+    public void update() {//Implementado do Observer
     }
 
     /**
@@ -45,9 +61,19 @@ public class verArtSubmView extends javax.swing.JFrame {
 
         editarButton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         editarButton.setText("Editar");
+        editarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editarButtonActionPerformed(evt);
+            }
+        });
 
         voltarButton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         voltarButton.setText("Voltar");
+        voltarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                voltarButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -93,36 +119,19 @@ public class verArtSubmView extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(verArtSubmView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(verArtSubmView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(verArtSubmView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(verArtSubmView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void voltarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarButtonActionPerformed
+        this.setVisible(false);
+        viewant.setVisible(true);
+    }//GEN-LAST:event_voltarButtonActionPerformed
 
-        /* Create and display the form */
+    private void editarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarButtonActionPerformed
+        controller.editarArtigo();
+    }//GEN-LAST:event_editarButtonActionPerformed
+
+    public static void main(String args[]){
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new verArtSubmView().setVisible(true);

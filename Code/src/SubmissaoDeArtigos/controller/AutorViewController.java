@@ -21,8 +21,11 @@ public class AutorViewController implements Observer {
         this.view.setVisible(false);
     }
     
-    public void IrParaNovaSubmissao(){
-    
+    public void IrParaSubmissao(){
+        verSubmissaoView view = new verSubmissaoView();
+        view.initVerSubView(model, this.view);
+        view.setVisible(true);
+        this.view.setVisible(false);      
     }
     
     

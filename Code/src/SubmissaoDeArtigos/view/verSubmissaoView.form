@@ -9,7 +9,7 @@
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
-    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="true"/>
   </SyntheticProperties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
@@ -170,6 +170,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Ver Avalia&#xe7;&#xe3;o"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="verAvaButtonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="verArtigButton">
       <Properties>
@@ -178,6 +181,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Ver Artigo Submetido"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="verArtigButtonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="voltarbutton">
       <Properties>
@@ -186,6 +192,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Voltar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="voltarbuttonActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
