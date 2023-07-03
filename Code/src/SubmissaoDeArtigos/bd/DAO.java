@@ -68,7 +68,7 @@ public class DAO {
         Connection conn = null;
         try {
             conn = DriverManager.getConnection("jdbc:derby:banco");
-            PreparedStatement statement = conn.prepareStatement("SELECT * FROM Autor WHERE enderecoEmail = ? AND senha = ?");
+            PreparedStatement statement = conn.prepareStatement("SELECT * FROM Revisor WHERE enderecoEmail = ? AND senha = ?");
             statement.setString(1, email);
             statement.setString(2, senha);
             ResultSet resultSet = statement.executeQuery();
@@ -77,8 +77,8 @@ public class DAO {
                 String nome = resultSet.getString("nome");
                 String enderecoEmail = resultSet.getString("enderecoEmail");
                 String senha1 = resultSet.getString("senha");
-                String especialidade1 = resultSet.getString("especialidade");
-                Revisor revisor = new Revisor( nome, enderecoEmail,senha1, especialidade1);
+                //String especialidade1 = resultSet.getString("especialidade");
+                Revisor revisor = new Revisor( nome, enderecoEmail,senha1, "revisor");
                 revisor.setId(id);
                 resultSet.close();
                 statement.close();
@@ -135,7 +135,7 @@ public Autor verificarLoginAutor(String email, String senha) {
         }
     }
     
-    //Verificar login
+    //Verificar loginvvv
     public Pessoa verificarLoginPessoa(String email, String senha) {
         Connection conn = null;
         try {

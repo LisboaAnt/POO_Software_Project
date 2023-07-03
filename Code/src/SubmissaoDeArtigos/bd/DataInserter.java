@@ -30,8 +30,22 @@ public class DataInserter {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    
     }
+    public void insertRevista(Revista revista) {
+    String sql = "INSERT INTO Revista (nome, editorChefe_id, ISSN) VALUES (?, ?, ?)";
+    try (PreparedStatement statement = conn.prepareStatement(sql)) {
+        statement.setString(1, revista.getNome());
+        statement.setInt(2, revista.getEditorChefeId());
+        statement.setInt(3, revista.getISSN());
+        statement.executeUpdate();
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+}
 
+    
+    
         public void insertRevisor(Revisor revisor){
         String sql = "INSERT INTO Revirsor (nome, senha, enderecoEmail,especialidade) VALUES (?, ?, ?, ?)";
         try (Connection conn = DriverManager.getConnection("jdbc:derby:banco");

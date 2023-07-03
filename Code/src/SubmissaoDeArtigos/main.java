@@ -21,7 +21,7 @@ public class main { //poe o derby na libraries na classpath
 
             
         DAO dao = DAO.getInstance();
-        dao.DatabaseInitializer();
+        //dao.DatabaseInitializer();
 
         //Pessoa a = new Pessoa("Luis","lis.gmail", "1235", "Autor");
         //dao.databaseInsert(a);
